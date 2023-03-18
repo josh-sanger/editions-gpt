@@ -1,5 +1,6 @@
 import {useRef, useEffect, useCallback, useState} from 'react';
-import {Configuration, OpenAIApi, ChatCompletionRequestMessage} from 'openai';
+import {Configuration, OpenAIApi} from 'openai';
+import {type ChatCompletionRequestMessage} from 'openai';
 
 import {type ActionArgs} from '@remix-run/node';
 import {Form, useActionData, useNavigation, Link, useSubmit} from '@remix-run/react';
@@ -21,8 +22,6 @@ export interface ChatHistoryProps extends ChatCompletionRequestMessage {
 
 /**
  * API call executed server side
- *
- * TODO: Add embeddings fetching
  */
 export async function action({request}: ActionArgs): Promise<ReturnedDataProps> {
   const body = await request.formData();
@@ -37,6 +36,41 @@ export async function action({request}: ActionArgs): Promise<ReturnedDataProps> 
   try {
     const openai = new OpenAIApi(conf);
 
+    // get the vector of the query string
+    const embeddingResponse = await openai.createEmbedding({
+      model: 'text-embedding-ada-002',
+      input: message,
+    });
+
+    const [responseData] = embeddingResponse.data.data;
+
+    // get best results from pinecone
+    const pineconeResponse = await fetch(`${process.env.PINECONE_INDEX_URL}/query`, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        'Api-Key': process.env.PINECONE_API_KEY
+      } as any,
+      body: JSON.stringify({
+        includeValues: true,
+        includeMetadata: true,
+        vector: responseData.embedding,
+        namespace: 'editions-global',
+        topK: 5,
+      }),
+    });
+
+    // save as json
+    const pincodeResponseData = await pineconeResponse.json();
+
+    const matchesContext = pincodeResponseData.matches.map((item: any) => (
+      `Title: ${item.metadata.title}
+      Content: ${item.metadata.content}
+      ${item.metadata.relatedLinks ? `Related links: ${item.metadata.relatedLinks}` : ''}`
+    ));
+
+    // get the answer from GPT-3.5-turbo
     const chat = await openai.createChatCompletion({
       model: 'gpt-3.5-turbo',
       messages: [
@@ -44,7 +78,13 @@ export async function action({request}: ActionArgs): Promise<ReturnedDataProps> 
         ...chatHistory,
         {
           role: 'user',
-          content: message,
+          content: `Context:
+          ${matchesContext}
+
+          Question: ${message}
+
+          Answer:
+          `,
         },
       ],
     });
@@ -65,6 +105,7 @@ export async function action({request}: ActionArgs): Promise<ReturnedDataProps> 
     };
   }
 }
+
 
 export default function IndexPage() {
   const minTextareaRows = 1;
@@ -119,12 +160,12 @@ export default function IndexPage() {
    * Saves the user's message to the chat history
    * @param content The user's message
    */
-  const saveUserMessage = (content: string) => {
+  const saveUserMessage = useCallback((content: string) => {
     pushChatHistory({
       content,
       role: 'user',
     })
-  };
+  }, [pushChatHistory]);
 
   /**
    * Ensure the user message is added to the chat on submit (button press)
