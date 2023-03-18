@@ -21,6 +21,8 @@ export interface ChatHistoryProps extends ChatCompletionRequestMessage {
 
 /**
  * API call executed server side
+ *
+ * TODO: Add embeddings fetching
  */
 export async function action({request}: ActionArgs): Promise<ReturnedDataProps> {
   const body = await request.formData();
@@ -203,13 +205,13 @@ export default function IndexPage() {
   }, [chatHistory]);
 
   return (
-    <main className="container mx-auto bg-light-shade rounded h-full grid grid-rows-layout">
+    <main className="container mx-auto bg-light-shade rounded-lg h-full grid grid-rows-layout">
       <div className="chat-container bg-white rounded-t overflow-auto" ref={chatContainerRef}>
         {chatHistory.length === 0 && (
           <div className="intro p-8 grid place-items-center h-full text-center">
             <div className="intro-content">
-              <h1 className="text-4xl font-semibold">Open AI base</h1>
-              <p className="mt-4">Ask anything 😊</p>
+              <h1 className="text-4xl font-semibold">Editions GPT</h1>
+              <p className="mt-4">Ask something about the Go Global solution. (This is using embedding vectors 🤓)</p>
             </div>
           </div>
         )}
@@ -240,13 +242,13 @@ export default function IndexPage() {
           className="max-w-maxWidth mx-auto"
         >
           <div className="input-wrap relative">
-            <label htmlFor="message" className="absolute left[-9999px] w-px h-px overflow-hidden">Ask a question</label>
+            <label htmlFor="message" className="absolute left[-9999px] w-px h-px overflow-hidden">Ask a question about Editions</label>
             <textarea
               id="message"
               aria-disabled={isSubmitting}
               ref={inputRef}
               className="auto-growing-input m-0 appearance-none resize-none text-base p-3 border border-borderColor rounded w-full block leading-6"
-              placeholder="Ask a question"
+              placeholder="Ask a question about Editions"
               name="message"
               onChange={handleTextareaChange}
               required
@@ -270,7 +272,7 @@ export default function IndexPage() {
             </button>
           </div>
         </Form>
-        <p className="made-with text-xs text-center mt-4">Made with ❤️ by <a target="_blank" href="http://joshuasanger.ca">Josh Sanger</a></p>
+        <p className="made-with text-xs text-center mt-4">Made with ❤️ by Core Creative</p>
       </div>
     </main >
   );
@@ -278,7 +280,7 @@ export default function IndexPage() {
 
 export function ErrorBoundary({error}: {error: Error}) {
   return (
-    <main className="container mx-auto bg-light-shade rounded grid grid-rows-layout p-8">
+    <main className="container mx-auto bg-light-shade rounded-lg grid grid-rows-layout p-8">
       <h1 className="text-4xl font-semibold">Something went wrong!</h1>
       <p className="error mt-4 p-5 rounded text-error border border-error">{error.message}</p>
       <p className="mt-4"><Link to="/">Back to chat</Link></p>
