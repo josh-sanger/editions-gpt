@@ -315,7 +315,7 @@ export default function IndexPage() {
         </Form>
         <p className="made-with text-xs text-center mt-4">Made with ❤️ by Core Creative</p>
       </div>
-    </main >
+    </main>
   );
 }
 
