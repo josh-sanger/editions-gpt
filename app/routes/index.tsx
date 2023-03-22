@@ -117,7 +117,7 @@ export default function IndexPage() {
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const navigation = useNavigation();
   const submit = useSubmit();
-  const [chatHistory, setChatHistory] = useState<ChatHistoryProps[]>(context);
+  const [chatHistory, setChatHistory] = useState<ChatHistoryProps[]>([]);
 
   const isSubmitting = navigation.state === 'submitting';
 
