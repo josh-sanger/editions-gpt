@@ -68,7 +68,7 @@ export async function loader() {
 
     const jsonData = {
       vectors,
-      namespace: 'editions-global',
+      namespace: 'editions',
     }
 
     fs.writeFile('vector-json/editions-vector.json', JSON.stringify(jsonData));

@@ -56,7 +56,7 @@ export async function action({request}: ActionArgs): Promise<ReturnedDataProps> 
         includeValues: true,
         includeMetadata: true,
         vector: responseData.embedding,
-        namespace: 'editions-global',
+        namespace: 'editions',
         topK: 5,
       }),
     });
