@@ -55,7 +55,7 @@ export default function Message({content, error, key, role = 'user'}: MessagePro
   return (
     <div
       className={cn(
-        'message w-full p-4 flex',
+        'message w-full p-4 flex small-mobile:max-sm:text-sm',
         role === 'user' ? 'justify-end text-right' : 'justify-start',
         error && 'text-error'
       )}

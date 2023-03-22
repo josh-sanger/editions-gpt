@@ -10,6 +10,9 @@ module.exports = {
       'sans': ['Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
     },
     extend: {
+      screens: {
+        'small-mobile': '340px',
+      },
       colors: {
         'dark-blue': '#4200FF',
         'light-blue': '#00FFA3',

@@ -272,10 +272,10 @@ export default function IndexPage() {
   }, [chatHistory]);
 
   return (
-    <main className="container mx-auto rounded-lg h-full grid grid-rows-layout p-8">
+    <main className="container mx-auto rounded-lg h-full grid grid-rows-layout p-4 sm:p-8 max-w-full sm:max-w-auto">
       <div className="chat-container" ref={chatContainerRef}>
         {chatHistory.length === 0 && (
-          <div className="intro p-8 grid place-items-center h-full text-center">
+          <div className="intro grid place-items-center h-full text-center">
             <div className="intro-content">
               <h1 className="text-4xl font-semibold">Editions GPT</h1>
               <p className="mt-4">Ask something about the Editions Winter ’23</p>
@@ -299,7 +299,7 @@ export default function IndexPage() {
           </div>
         )}
       </div>
-      <div className="form-container p-8">
+      <div className="form-container p-4 sm:p-8">
         <Form
           aria-disabled={isSubmitting}
           method="post"
@@ -314,7 +314,7 @@ export default function IndexPage() {
               id="message"
               aria-disabled={isSubmitting}
               ref={inputRef}
-              className="auto-growing-input m-0 appearance-none text-white placeholder:text-white resize-none text-xl py-4 px-6  border-none outline-none rounded-4xl w-full block leading-6 bg-gradient-to-r from-dark-blue to-light-blue"
+              className="auto-growing-input m-0 appearance-none text-white placeholder:text-white resize-none text-sm md:text-lg py-4 px-6  border-none outline-none rounded-4xl w-full block leading-6 bg-gradient-to-r from-dark-blue to-light-blue"
               placeholder="Ask a question about Editions"
               name="message"
               onChange={handleTextareaChange}
@@ -339,8 +339,8 @@ export default function IndexPage() {
             </button>
           </div>
         </Form>
-        <p className="made-with text-xs text-center mt-4 text-white-faded-less flex gap-4 justify-center">
-          <span className="text-white-faded">Suggestions:</span>
+        <p className="made-with text-xs text-center mt-4 text-white-faded-less flex flex-wrap gap-4 justify-center">
+          <span className="text-white-faded w-full small-mobile:w-auto">Suggestions:</span>
           <button type="button" onClick={() => handlePrefilledOption('Anything new with marketing?')}>Marketing</button>
           <button type="button" onClick={() => handlePrefilledOption('Tell me something about operations!')}>Operations</button>
           <button type="button" onClick={() => handlePrefilledOption('Aything new with the Shop app?')}>Shop app</button>
