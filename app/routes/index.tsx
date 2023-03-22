@@ -117,7 +117,7 @@ export default function IndexPage() {
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const navigation = useNavigation();
   const submit = useSubmit();
-  const [chatHistory, setChatHistory] = useState<ChatHistoryProps[]>([]);
+  const [chatHistory, setChatHistory] = useState<ChatHistoryProps[]>(context);
 
   const isSubmitting = navigation.state === 'submitting';
 
@@ -254,7 +254,20 @@ export default function IndexPage() {
     }
 
     if (chatHistory.length) {
-      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+      const body = document.body;
+      const html = document.documentElement;
+
+      // Calculate the maximum scroll height
+      const maxScrollHeight = Math.max(
+          body.scrollHeight,
+          body.offsetHeight,
+          html.clientHeight,
+          html.scrollHeight,
+          html.offsetHeight
+      );
+
+      // Scroll to the bottom
+      window.scrollTo(0, maxScrollHeight);
     }
   }, [chatHistory]);
 
