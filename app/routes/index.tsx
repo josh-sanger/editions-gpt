@@ -6,7 +6,7 @@ import {type ActionArgs} from '@remix-run/node';
 import {Form, useActionData, useNavigation, Link, useSubmit} from '@remix-run/react';
 
 import context from '~/context';
-import {Send as SendIcon} from '~/components/Icons';
+import {Arrow as ArrowIcon} from '~/components/Icons';
 import Message from '~/components/Message';
 
 export interface ReturnedDataProps {
@@ -193,6 +193,19 @@ export default function IndexPage() {
   }, [submit, formRef, saveUserMessage]);
 
   /**
+   * Handles the click event of a prefilled option
+   */
+  const handlePrefilledOption = (prompt: string) => {
+    if (!inputRef.current) {
+      return;
+    }
+
+    inputRef.current.value = prompt;
+    saveUserMessage(prompt);
+    submit(formRef.current, {replace: true});
+  }
+
+  /**
    * Focuses the input element when the page is loaded and clears the
    * input when the form is submitted
    */
@@ -246,19 +259,19 @@ export default function IndexPage() {
   }, [chatHistory]);
 
   return (
-    <main className="container mx-auto bg-light-shade rounded-lg h-full grid grid-rows-layout">
-      <div className="chat-container bg-white rounded-t overflow-auto" ref={chatContainerRef}>
+    <main className="container mx-auto rounded-lg h-full grid grid-rows-layout p-8">
+      <div className="chat-container" ref={chatContainerRef}>
         {chatHistory.length === 0 && (
           <div className="intro p-8 grid place-items-center h-full text-center">
             <div className="intro-content">
               <h1 className="text-4xl font-semibold">Editions GPT</h1>
-              <p className="mt-4">Ask something about the Go Global solution. (This is using embedding vectors 🤓)</p>
+              <p className="mt-4">Ask something about the Editions Winter ’23</p>
             </div>
           </div>
         )}
 
         {chatHistory.length > 0 && (
-          <div className="messages w-full min-h-full grid place-content-end grid-cols-1">
+          <div className="messages max-w-maxWidth mx-auto min-h-full grid place-content-end grid-cols-1">
             {chatHistory.map((chat, index) => (
               <Message
                 error={chat.error}
@@ -273,14 +286,14 @@ export default function IndexPage() {
           </div>
         )}
       </div>
-      <div className="form-container p-8 inner-shadow">
+      <div className="form-container p-8">
         <Form
           aria-disabled={isSubmitting}
           method="post"
           ref={formRef}
           onSubmit={handleFormSubmit}
           replace
-          className="max-w-maxWidth mx-auto"
+          className="max-w-[500px] mx-auto"
         >
           <div className="input-wrap relative">
             <label htmlFor="message" className="absolute left[-9999px] w-px h-px overflow-hidden">Ask a question about Editions</label>
@@ -288,7 +301,7 @@ export default function IndexPage() {
               id="message"
               aria-disabled={isSubmitting}
               ref={inputRef}
-              className="auto-growing-input m-0 appearance-none resize-none text-base p-3 border border-borderColor rounded w-full block leading-6"
+              className="auto-growing-input m-0 appearance-none text-white placeholder:text-white resize-none text-xl py-4 px-6  border-none outline-none rounded-4xl w-full block leading-6 bg-gradient-to-r from-dark-blue to-light-blue"
               placeholder="Ask a question about Editions"
               name="message"
               onChange={handleTextareaChange}
@@ -305,15 +318,20 @@ export default function IndexPage() {
             <button
               aria-label="Submit"
               aria-disabled={isSubmitting}
-              className="absolute right-0 items-center top-1/2 -translate-y-1/2 appearance-none bg-transparent text-white h-full w-11 border-none cursor-pointer shadow-none rounded-tr rounded-br grid place-items-center group hover:bg-dark-shade transition-colors disabled:bg-[#e0e0e0] disabled:text-black disabled:cursor-not-allowed disabled:hover:bg-[#e0e0e0]"
+              className="absolute right-2 items-center top-1/2 -translate-y-1/2 appearance-none bg-transparent text-black h-11 w-11 border-none cursor-pointer shadow-none rounded-full grid place-items-center group bg-white hover:bg-light-shade transition-colors disabled:bg-[#e0e0e0] disabled:text-black disabled:cursor-not-allowed disabled:hover:bg-[#e0e0e0] focus:outline-dark-blue"
               type="submit"
               disabled={isSubmitting}
             >
-              <SendIcon />
+              <ArrowIcon />
             </button>
           </div>
         </Form>
-        <p className="made-with text-xs text-center mt-4">Made with ❤️ by Core Creative</p>
+        <p className="made-with text-xs text-center mt-4 text-white-faded-less flex gap-4 justify-center">
+          <span className="text-white-faded">Suggestions:</span>
+          <button type="button" onClick={() => handlePrefilledOption('Anything new with marketing?')}>Marketing</button>
+          <button type="button" onClick={() => handlePrefilledOption('Tell me something about operations!')}>Operations</button>
+          <button type="button" onClick={() => handlePrefilledOption('Aything new with the Shop app?')}>Shop app</button>
+        </p>
       </div>
     </main>
   );
@@ -321,9 +339,9 @@ export default function IndexPage() {
 
 export function ErrorBoundary({error}: {error: Error}) {
   return (
-    <main className="container mx-auto bg-light-shade rounded-lg grid grid-rows-layout p-8">
-      <h1 className="text-4xl font-semibold">Something went wrong!</h1>
-      <p className="error mt-4 p-5 rounded text-error border border-error">{error.message}</p>
+    <main className="container mx-auto bg-white rounded-lg grid grid-rows-layout p-8">
+      <h1 className="text-4xl text-dark-shade font-semibold">Something went wrong!</h1>
+      <p className="error mt-4 p-5 rounded text-error border border-error">{error.message || 'Unknown error'}</p>
       <p className="mt-4"><Link to="/">Back to chat</Link></p>
     </main>
   );

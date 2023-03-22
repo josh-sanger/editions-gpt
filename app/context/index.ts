@@ -19,7 +19,7 @@ const context = [
     Example:
     [your answer to the questions]
 
-    Related links:
+    Suggested links:
 
     - [Related link here from the context]
     - [Another related link here from the context]`,

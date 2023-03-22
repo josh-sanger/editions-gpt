@@ -55,21 +55,16 @@ export default function Message({content, error, key, role = 'user'}: MessagePro
   return (
     <div
       className={cn(
-        'message w-full p-8',
-        getRoleClasses(role),
+        'message w-full p-4 flex',
+        role === 'user' ? 'justify-end text-right' : 'justify-start',
         error && 'text-error'
       )}
       key={key || ''}
     >
-      <div className="message-inner max-w-maxWidth mx-auto flex items-center space-x-4">
-        <span className={cn(
-          'message-role h-10 w-10 grid place-items-center rounded-full shrink-0 grow-0',
-          role ==='user' && 'bg-dark-accent',
-          role !== 'user' && 'bg-dark-shade',
-          error
-        )}>
-          {<RoleIcon role={role} error={error} />}
-        </span>
+      <div className={cn(
+        'message-inner space-x-4 max-w-[480px] rounded-4xl p-4',
+        role === 'user' ? 'bg-gradient-to-r from-dark-blue to-light-blue' : 'bg-white text-black',
+      )}>
         <div className="response">
           <ReactMarkdown children={content} />
         </div>

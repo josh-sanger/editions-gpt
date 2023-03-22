@@ -36,8 +36,11 @@
     background-color: theme('backgroundColor.light-shade');
     padding: theme('padding.1') theme('padding.2');
     border-radius: theme('borderRadius.lg');
+    padding: theme('spacing.3');
     font-family: monospace;
     font-size: 1rem;
+    color: black;
+    overflow: auto;
   }
 
   pre code {
@@ -52,5 +55,6 @@
     padding: theme('padding.1') theme('padding.2');
     border-radius: theme('borderRadius.lg');
     font-family: monospace;
+    color: black;
   }
 }

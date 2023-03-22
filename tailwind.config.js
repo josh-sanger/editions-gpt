@@ -10,6 +10,12 @@ module.exports = {
       'sans': ['Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
     },
     extend: {
+      colors: {
+        'dark-blue': '#4200FF',
+        'light-blue': '#00FFA3',
+        'white-faded': 'rgba(255, 255, 255, 0.4)',
+        'white-faded-less': 'rgba(255, 255, 255, 0.8)',
+      },
       spacing: {
         8: '30px',
       },
@@ -32,6 +38,9 @@ module.exports = {
       borderColor: {
         'error': '#f44336',
         'border-color': '#cccccc',
+      },
+      borderRadius: {
+        '4xl': '1.875rem',
       },
       maxWidth: {
         'maxWidth': '768px',
