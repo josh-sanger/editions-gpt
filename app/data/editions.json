@@ -1,6 +1,228 @@
 {
   "sections": [
     {
+      "title": "Lightning-fast page loads, everywhere",
+      "content": "No matter where your customers are shopping, our newly expanded global infrastructure ensures they get an incredibly fast experience by efficiently routing traffic and rendering sites as close to their locations as possible.\n\nWith 270 points of presence around the world and additional locations being continually deployed, businesses are seeing their sites respond twice as fast.",
+      "relatedLinks": [
+        "[Newly expanded global infrustructure](https://www.shopify.com/partners/blog/storefront-renderer)"
+      ]
+    },
+    {
+      "title": "One-page checkout",
+      "content": "The checkout you know and trust is getting a major overhaul. This year, we’re rolling out an all-new, one-page checkout. Inspired by Shop Pay’s proven conversion, it’s faster, higher-converting, and exactly what your customers expect.\nFewer fields to enter make it faster for customers to complete their purchase.\nFewer page loads mean less friction for customers, which leads to higher conversion.",
+      "relatedLinks": []
+    },
+    {
+      "title": "Drag-and-drop checkout editor",
+      "content": "Easily edit the look of your checkout with the new checkout editor, which seamlessly integrates with Shop Pay for a consistent brand and buyer experience. Exclusive to Shopify Plus.\nAdd your brand’s logo, change the background color or image, and update the font of your checkout.\nInstall checkout apps that integrate with the editor to add more functionality to your checkout experience.",
+      "relatedLinks": [
+        "[Try the new drag and drop editior](https://admin.shopify.com/settings/checkout?utm_source=editions&utm_feature=checkout-editor)"
+      ]
+    },
+    {
+      "title": "Apps to extend checkout",
+      "content": "Customize your checkout to include things like additional fields, product offers, and loyalty programs by installing apps built for checkout.",
+      "relatedLinks": [
+        "[Explore checkout apps](https://apps.shopify.com/stories/guide-customize-your-checkout)"
+      ]
+    },
+    {
+      "title": "Cart and checkout validations",
+      "content": "Create rules that implement custom, dynamic restrictions for whether a product can be purchased, and in what quantities, with validations built on Shopify Functions.",
+      "relatedLinks": [
+        "[Read cart and checkout validations documentation](https://shopify.dev/api/functions)"
+      ]
+    },
+    {
+      "title": "Build trust with Shop Promise",
+      "content": "Communicate reliable, fast delivery by installing the Shop channel and adding the Shop Promise badge and delivery dates to your store.\nDisplay smart delivery dates predicted by Shopify that are backed by a limited guarantee for your customers if they’re missed.\nHelp customers check out with confidence and increase conversion by up to 25%.",
+      "relatedLinks": []
+    },
+    {
+      "title": "Signed-in shopping with Shop",
+      "content": "Identify and sign in high-intent Shop users before they reach checkout with their Shop credentials, including saved passkeys. Let customers speed safely through a one-click checkout using Shop Pay, lowering bounce rates and increasing conversion.",
+      "relatedLinks": [
+        "[Explore Shop’s sign-in features](https://www.shopify.com/shop-sign-in)",
+        "[Learn more about Shop pay](https://www.shopify.com/shop-pay)"
+      ]
+    },
+    {
+      "title": "Optimized image rendering and focal points",
+      "content": "We optimize your images for the highest quality and lowest file size to improve your store’s speed and increase conversion rates. Now you can choose the focal point on images, so your products show up front and center.",
+      "relatedLinks": [
+        "[Learn about image rendering](https://cdn.shopify.com/)"
+      ]
+    },
+    {
+      "title": "Header and footer customizations",
+      "content": "With support for sections and blocks in the header and footer of themes, now you can customize any section of your store without leaving the editor or touching code.",
+      "relatedLinks": [
+        "[Customize your store](https://www.shopify.com/blog/online-store-improvements)"
+      ]
+    },
+    {
+      "title": "Extend your theme with custom CSS",
+      "content": "Easily add custom CSS to your online store theme without editing any theme files. Preview CSS changes directly in the editor.",
+      "relatedLinks": [
+        "[Learn about custom CSS for themes](https://help.shopify.com/en//manual/online-store/themes/theme-structure/extend)"
+      ]
+    },
+    {
+      "title": "New color settings for online stores",
+      "content": "Now developers can help you better understand, access, and edit global color schemes for online stores with easy-to-add color settings for themes.",
+      "relatedLinks": [
+        "[Read documentation](https://shopify.dev/themes/architecture/settings/input-settings#color_scheme)"
+      ]
+    },
+    {
+      "title": "AI-generated storefront content",
+      "content": "Use Shopify Magic to beat writer’s block and automatically create product descriptions.\nInput keywords or features and our system generates a description.\nProduce compelling, tone-specific descriptions that convert.",
+      "relatedLinks": [
+        "[Learn more about Shopify Magic](https://www.shopify.com/blog/ai-product-descriptions)"
+      ]
+    },
+    {
+      "title": "Better built-in search and recommendations",
+      "content": "Improved search relevance ensures popular products are highlighted, and misspellings still return the right result to better match the customer’s intent.\nTypeahead search suggestions help buyers find what they’re looking for faster.\nPowered by data across Shopify, now product recommendations offer suggestions without any historical purchase data required.",
+      "relatedLinks": [
+        "[Learn more about improved search relevnce](https://www.shopify.com/blog/storefront-search-and-recommendations)"
+      ]
+    },
+    {
+      "title": "Customize your store with metaobjects",
+      "content": "Create reusable, custom content like a shoppable gallery, product highlights, cart upsells, and more with metaobjects. Draft, edit, translate, and reference your metaobjects directly within the online store editor, or use the Storefront API to seamlessly pull content into your custom storefront.",
+      "relatedLinks": [
+        "[Learn more about metaobjects](https://www.shopify.com/blog/custom-data-management-tools)",
+        "[Find out how Smash + Tess used metaobjects](https://www.shopify.com/blog/smash-and-tess)"
+      ]
+    },
+    {
+      "title": "Power dynamic content with metafields",
+      "content": "Now you can build dynamic collections with metafields. Further customize your metafields across commerce objects with updates that support rich text, money, and collection reference data.",
+      "relatedLinks": [
+        "[Learn about metafields](https://shopify.dev/apps/data-extensions/metafields)"
+      ]
+    },
+    {
+      "title": "Enhanced Search & Discovery app",
+      "content": "Extend filters to product tags and large collections, recommend products that are frequently bought together, and optimize how customers navigate your store with enhanced analytics. Now using metafields, you can add manual recommendations and product boosts at scale.",
+      "relatedLinks": [
+        "[Try the Search and Discovery app in your store](https://admin.shopify.com/apps/search-and-discovery?utm_source=editions&utm_feature=search-and-discovery-app)"
+      ]
+    },
+    {
+      "title": "Sanity integration",
+      "content": "If you use Sanity, now you can connect your content directly to your Shopify Online Store for easier development and better store performance.",
+      "relatedLinks": [
+        "[Learn about Sanity](https://apps.shopify.com/sanity-connect)"
+      ]
+    },
+    {
+      "title": "Product bundles",
+      "content": "Coming soon, you can set up bundles with the new Shopify Bundles app or any of the upcoming bundles apps built on Shopify Functions in the Shopify App Store.",
+      "relatedLinks": [
+        "[Sign up for Product Bundles early access](https://www.shopify.com/shopify-bundles-early-access)"
+      ]
+    },
+    {
+      "title": "New discount apps built on Shopify Functions",
+      "content": "Now you can offer customers more discount types and the ability to combine multiple discounts on a single order. Choose from our four ready-to-use discounts or access additional types, like a free gift with purchase, using a discount app that integrates seamlessly with your admin. You can also build a custom app with Shopify Functions.",
+      "relatedLinks": [
+        "[Explore discount apps](https://apps.shopify.com/collections/functions-discounts)"
+      ]
+    },
+    {
+      "title": "Create channel-specific discounts",
+      "content": "Offer unique discounts across channels like Google, Facebook, and Instagram to strengthen customer relationships and sell more.",
+      "relatedLinks": [
+        "[Try channel-specific discounts in your store](https://admin.shopify.com/discounts?utm_source=editions&utm_feature=channel-discounts)"
+      ]
+    },
+    {
+      "title": "Updates to our Subscription APIs",
+      "content": "Now developers can make temporary changes to subscription contracts without overwriting source data, reduce API calls when creating, billing, or updating contracts, and support local delivery and in-store pickup for subscription orders.",
+      "relatedLinks": [
+        "[Read about Subscription APIs](https://www.shopify.com/partners/blog/shopify-subscription-apis)"
+      ]
+    },
+    {
+      "title": "Deferred purchase options with PayPal",
+      "content": "Pre-orders and try-before-you-buy now support PayPal, so you can reach more customers around the world.",
+      "relatedLinks": [
+        "[Learn about purchase options](https://help.shopify.com/en//manual/products/purchase-options/pre-orders)"
+      ]
+    },
+    {
+      "title": "Shopify Payments available in France",
+      "content": "Now businesses in France can accept credit cards and other popular payment methods using Shopify Payments.",
+      "relatedLinks": [
+        "[Set up Shopify Payments](https://help.shopify.com/en//manual/payments/shopify-payments)"
+      ]
+    },
+    {
+      "title": "POS Go: all-in-one mobile selling hardware",
+      "content": "In-person sellers can stay on top of business with our latest mobile point of sale (POS) device. There’s no separate tablet or card reader needed with POS Go, so you can stay connected to your business at a fraction of the cost of other setups. Only available in the United States.",
+      "relatedLinks": [
+        "[Buy POS Go](https://hardware.shopify.com/products/shopify-pos-go-reader-us?variant=42822879871032&utm_source=editions&utm_feature=buy-pos-go)"
+      ]
+    },
+    {
+      "title": "Track incoming and committed inventory",
+      "content": "New inventory statuses like on hand and unavailable give you an actionable view of your total available inventory in your POS. Make better in-store decisions with insight into inventory that’s temporarily set aside for draft orders.",
+      "relatedLinks": [
+        "[Read about inventory states](https://www.shopify.com/retail/editions)"
+      ]
+    },
+    {
+      "title": "Streamlined in-person checkout",
+      "content": "Customize your smart grid and save common line fees like rush orders for faster checkouts. Give customers tipping and receipt options with the improved Customer View app.",
+      "relatedLinks": [
+        "[Try streamlined in-person checkout in your store](https://admin.shopify.com/apps/point-of-sale-channel?utm_source=editions&utm_feature=pos-checkout)",
+        "[Learn more about the Customer View app](https://play.google.com/store/apps/details?id=com.shopify.pos.customerview)"
+      ]
+    },
+    {
+      "title": "Gift cards now integrate with POS",
+      "content": "Assign and edit gift cards through a customer’s profile, issue a physical or a digital gift card from POS.",
+      "relatedLinks": [
+        "[Learn about gift cards](https://changelog.shopify.com/posts/new-customer-profile-gift-card-view-within-shopify-pos)"
+      ]
+    },
+    {
+      "title": "Shopify POS available in more markets",
+      "content": "Access Shopify POS in any of our 15 markets, now including Singapore and Finland.",
+      "relatedLinks": [
+        "[View POS availability](https://www.shopify.com/pos/hardware)"
+      ]
+    },
+    {
+      "title": "Staff permissions and sales attribution",
+      "content": "Retailers of all sizes can access detailed information on operational tasks with improved sales attribution and granular staff permissions.",
+      "relatedLinks": [
+        "[Learn more about sales attribution](https://changelog.shopify.com/posts/new-improvements-to-staff-attribution)",
+        "[Learn more about staff permissions](https://changelog.shopify.com/posts/enhancements-to-pos-staff-permissions)"
+      ]
+    },
+    {
+      "title": "Support for 1,000+ locations",
+      "content": "Sell in person, at scale, and in more locations than ever with centralized support for more than 1,000 retail locations from a single store.",
+      "relatedLinks": []
+    },
+    {
+      "title": "More Shop app customization",
+      "content": "Customize your product collections, descriptions, best sellers, and branding on your Shop Store.\nCustomers will be able to sign in to Shop easier than ever with passkeys.\nAdd new experiences to your Shop Store and product pages. Use partner apps Foursixty and Supergreat to host shoppable brand content and video reviews.\nUse product reviews to discover new ways to grow from your customer feedback.",
+      "relatedLinks": [
+        "[Try Shop app customization in your store](https://accounts.shopify.com/store-login?redirect=settings/channels/install_shop_channel?redirect=/&utm_source=editions&utm_feature=shop-app-customization)"
+      ]
+    },
+    {
+      "title": "Sync and sell on YouTube",
+      "content": "Sell your products on YouTube to create authentic, live and on-demand shopping experiences.\nStand out with up-to-date product info right below your video, pinned in the chat, or tagged during a live stream.",
+      "relatedLinks": [
+        "[Start selling with Youtube in your store](https://admin.shopify.com/apps/google?utm_source=editions&utm_feature=youtube-channel)"
+      ]
+    },
+    {
       "title": "Translate & Adapt app",
       "content": "Engage more customers with regional, seasonal, and cultural relevance by localizing your store content across markets.\n\nUse a side-by-side editor to add, edit, and review translated content, and automatically translate up to two languages completely free.\nAdapt content to reflect spelling and messaging variations between markets.",
       "relatedLinks": [
@@ -41,6 +263,643 @@
     {
       "title": "Automatically localize experiences",
       "content": "While Markets’ standard features let you manually localize your store, Markets Pro automates localization. Geolocation and domain redirect automatically ensure customers shop in their local experience, using the local currency and preferred payment methods.",
+      "relatedLinks": []
+    },
+    {
+      "title": "Quality rules",
+      "content": "Create quantity rules for products and variants, including minimums and maximums, case-packs, and increments.\nIncrease average order value by adding minimum order quantities for products.\nSimplify the fulfillment process and save on shipping and handling costs by selling in bulk.\nSet unique rules for different customers.\nCreate customized B2B experiences",
+      "relatedLinks": [
+        "[Learn more about quality rules](https://help.shopify.com/en//manual/b2b/catalogs)",
+        "[https://www.shopify.com/enterprise/b2b-dtc](https://www.shopify.com/enterprise/b2b-dtc)"
+      ]
+    },
+    {
+      "title": "Customer-specific product publishing",
+      "content": "Offer your business customers curated product selections and catalogs to customize their buying experience.",
+      "relatedLinks": [
+        "[Get started with product publishing](https://help.shopify.com/en//manual/b2b/catalogs)"
+      ]
+    },
+    {
+      "title": "Create custom logic for B2B",
+      "content": "Input company, location, and contact information into payment and delivery functions to customize your checkout. Meet the needs of both your B2B and DTC customers with logic that works for your B2B workflows, using Shopify Functions.",
+      "relatedLinks": [
+        "[Read custom logic for B2B documentation](https://shopify.dev/api/functions/reference/delivery-customization/graphql/common-objects/company)",
+        "[Learn more about payment customization](https://shopify.dev/api/functions/reference/payment-customization)",
+        "[Learn more about delivery customization](https://shopify.dev/api/functions/reference/delivery-customization)"
+
+      ]
+    },
+    {
+      "title": "Metafields for companies and locations",
+      "content": "Track unique information about your customers and streamline back office tasks by adding custom data fields to companies and company locations.",
+      "relatedLinks": [
+        "[Learn about metafields](https://help.shopify.com/en//manual/metafields)"
+      ]
+    },
+    {
+      "title": "Consistent checkout branding",
+      "content": "Build brand loyalty and awareness by keeping branding and design consistent across your entire B2B checkout experience.",
+      "relatedLinks": [
+        "[Try checkout branding in your store](https://admin.shopify.com/settings/checkout?utm_source=editions&utm_feature=checkout-branding)"
+      ]
+    },
+    {
+      "title": "Personalize templates using Liquid",
+      "content": "Delight your logged-in customers with a personalized store theme and email templates that include company information.",
+      "relatedLinks": [
+        "[Learn about using Liquid](https://help.shopify.com/en//manual/orders/notifications/email-variables)"
+      ]
+    },
+    {
+      "title": "Easy reordering",
+      "content": "Encourage reordering and increase sales by making it easy for customers to reorder their favorite products.",
+      "relatedLinks": [
+        "[Get started with easy reordering](https://help.shopify.com/en//manual/customers/customer-accounts)"
+      ]
+    },
+    {
+      "title": "B2B invitation emails",
+      "content": "Send customers a customizable welcome email with access and order instructions directly from your admin.",
+      "relatedLinks": [
+        "[Learn about invitation emails](https://help.shopify.com/en//manual/b2b/b2b-customers#customize-notification)"
+      ]
+    },
+    {
+      "title": "Checkout to draft",
+      "content": "Streamline the order process for you and your business customers.\nGain greater control and visibility by receiving orders as a draft, allowing you to review and approve them before finalizing.\nIncrease efficiency by automatically approving customer orders.\nGive your customers the opportunity to request a quote online.",
+      "relatedLinks": [
+        "[Learn more about draft orders](https://help.shopify.com/en//manual/b2b/draft-orders#checkout-to-draft)",
+        "[Find out how Brooklinen uses B2B on Shopify](https://www.shopify.com/plus/customers/brooklinen?utm_source=banner&utm_medium=plus-website&utm_campaign=editions_winter23&utm_content=plus-en-brooklinenb2bcasestudy)"
+      ]
+    },
+    {
+      "title": "Vaulted credit cards",
+      "content": "Streamline your payment processes and increase on-time payments by letting customers securely store credit cards at checkout or within customer accounts.",
+      "relatedLinks": [
+        "[Learn about vaulted credit cards](https://help.shopify.com/en//manual/b2b/vaulted-cards)"
+      ]
+    },
+    {
+      "title": "Payment reminders",
+      "content": "Create standard payment reminders, or set up a custom workflow using Shopify Flow, to email customers as payments become due or overdue.",
+      "relatedLinks": [
+        "[Learn more about Shopify Flow](https://apps.shopify.com/flow)",
+        "[Try payment reminders in your store](https://admin.shopify.com/settings/notifications?utm_source=editions&utm_feature=payment-reminders)"
+      ]
+    },
+    {
+      "title": "Invoices for draft orders",
+      "content": "Create draft orders on behalf of your customers, then easily collect payment by sending invoices directly from the admin.",
+      "relatedLinks": [
+        "[Learn about draft orders](https://help.shopify.com/en///manual/b2b/draft-orders)"
+      ]
+    },
+    {
+      "title": "Due-on-fulfillment payment terms",
+      "content": "Let customers know that payment is due after you’ve fulfilled their order, either by default or for one-off orders.",
+      "relatedLinks": [
+        "[Enable payment terms](https://help.shopify.com/en//manual/b2b/payment-terms)"
+      ]
+    },
+    {
+      "title": "New B2B APIs and compatible apps",
+      "content": "Use our suite of B2B APIs to create the custom solutions your wholesale business needs like collecting order notes, packaging and delivery instructions at checkout, or even building B2B loyalty programs. Or customize your experience with B2B-compatible apps.",
+      "relatedLinks": [
+        "[Explore our suite of B2B APIs](https://shopify.dev/apps/b2b)",
+        "[Read about using B2B APIs](https://www.shopify.com/partners/blog/b2b-apis)"
+      ]
+    },
+    {
+      "title": "Leverage creator partnerships with Shopify Collabs",
+      "content": "Build authentic relationships using our creator platform to drive sales. Recruit creators using a branded application page or search for the right fit for your community in our creator database. Manage relationships, send gifts, and track affiliate offers—all in one place.",
+      "relatedLinks": [
+        "[Learn more about our creator platform](https://www.shopify.com/collabs/find-influencers)",
+        "[Try Shopify Collabs in your store](https://admin.shopify.com/apps/collabs/embedded/community?v=2&utm_source=editions&utm_feature=shopify-collabs)"
+      ]
+    },
+    {
+      "title": "Acquire new customers with Shop Cash campaigns",
+      "content": "Grow your business sustainably with a pay-per-sale acquisition program that lets you boost the Shop Cash customers earn on Shop Pay purchases. Exclusive to Shopify Plus.",
+      "relatedLinks": [
+        "[Learn more about Shop pay](https://www.shopify.com/shop-pay)",
+        "[Try Shop Cash in your store](https://accounts.shopify.com/store-login?redirect=settings/channels/install_shop_channel?redirect=marketing&utm_source=editions&utm_feature=shop-cash-campaigns)"
+      ]
+    },
+    {
+      "title": "Audiences extends to the Google network and Pinterest",
+      "content": "Shopify Audiences helps you find high-intent buyers and increases the likelihood of conversions. Now you can automatically create, export, and refresh store-specific audiences to use across the Google Ad network and Pinterest in addition to the Facebook channel.",
+      "relatedLinks": [
+        "[Learn more about Shopify Audiences](https://www.shopify.com/audiences)",
+        "[Try Shopify Audiences in your store](https://admin.shopify.com/apps/shopify-audiences?utm_source=editions&utm_feature=shopify-audiences)"
+      ]
+    },
+
+    {
+      "title": "Performance Max by Google",
+      "content": "Maximize your reach and drive sales across Google channels like search, YouTube, and the web by running Performance Max campaigns.",
+      "relatedLinks": [
+        "[Try Performance Max by Google in your store](https://admin.shopify.com/apps/google?utm_source=editions&utm_feature=performance-max-app)"
+      ]
+    },
+
+    {
+      "title": "Advertise with Roku",
+      "content": "Easily build, buy, and measure TV streaming advertising campaigns directly on the Roku streaming platform.",
+      "relatedLinks": [
+        "[Try Roku ads in your store](https://admin.shopify.com/apps/roku-ads?utm_source=editions&utm_feature=roku-ads)"
+      ]
+    },
+    {
+      "title": "Capture emails with Shopify Forms",
+      "content": "Collect information from high-intent shoppers with customizable capture forms, including forms that let buyers sign in with Shop. Then market to your list with discounts, automations, and more.",
+      "relatedLinks": [
+        "[Try Shopify Forms in your store](https://admin.shopify.com/apps/shopify-forms?utm_source=editions&utm_feature=shopify-forms)",
+        "[Learn more about capture forms](https://www.shopify.com/blog/shopify-forms)"
+      ]
+    },
+    {
+      "title": "Secure authentication with passkeys",
+      "content": "Offer customers an easier and more secure way to access authenticated shopping experiences. Passkeys are integrated with customers’ Shop accounts and work across the Shop app, Shop Pay, and checkout.",
+      "relatedLinks": [
+        "[Learn more about passkeys](http://www.shopify.com/blog/ecommerce-payment-authentication)"
+      ]
+    },
+    {
+      "title": "Marketing automations for re-engagement",
+      "content": "Set up marketing automations to email customers who abandon a cart or checkout, or who browse products without buying. Easily add these new automations to your existing workflows in Shopify Email.",
+      "relatedLinks": [
+        "[Learn more about marketing automations](https://www.shopify.com/blog/reengagement-automations)",
+        "[Try marketing automations in your store](https://admin.shopify.com/marketing/automations/templates?utm_source=editions&utm_feature=reengagement-automations)"
+      ]
+    },
+    {
+      "title": "Customize Shopify Email templates",
+      "content": "Add a custom Liquid section to any Shopify Email template to create custom fonts, images, buttons, and more.",
+      "relatedLinks": [
+        "[Try Shopify Email templates in your store](https://admin.shopify.com/apps/shopify-email/landing?utm_source=editions&utm_feature=liquid-shopify-email-templates)",
+        "[Learn more about custom Liquid sections](https://help.shopify.com/en//manual/promoting-marketing/create-marketing/shopify-email/create-email/custom-liquid)"
+      ]
+    },
+    {
+      "title": "Express checkout buttons in Shopify Email",
+      "content": "Encourage more sales from your customers’ inbox by including a Shop Pay checkout button in any email campaign.",
+      "relatedLinks": [
+        "[Learn more about Shop Pay checkout buttons](https://www.shopify.com/blog/sell-faster-with-express-checkout-buttons-in-email)",
+        "[Try express checkout buttons in your store](https://admin.shopify.com/apps/shopify-email/landing?utm_source=editions&utm_feature=email-express-checkout)"
+      ]
+    },
+    {
+      "title": "Shopify Inbox now on Shop and Instagram",
+      "content": "Use chat across Shop and Instagram to share products and close sales with customers. In addition, you can now view live shopping activity in real time from your online store, so you can turn more conversations into sales.",
+      "relatedLinks": [
+        "[Learn more about Shopify Inbox](https://www.shopify.com/inbox)",
+        "[Try Shopify Inbox in your store](https://admin.shopify.com/inbox/integrations?utm_source=editions&utm_feature=shopify-inbox-on-shop-and-instagram)"
+      ]
+    },
+    {
+      "title": "Segment customers with new filters",
+      "content": "Discover powerful insights about your customers by creating segments based on who received or opened an email, purchased a specific product, and more. Then reach out with personalized campaigns to drive sales.",
+      "relatedLinks": [
+        "[Try customer segmentation in your store](https://admin.shopify.com/customers?utm_source=editions&utm_feature=segmentation-filters)"
+      ]
+    },
+    {
+      "title": " Merge duplicate customer profiles",
+      "content": "Combine duplicate customer profiles to ensure you have the most accurate view of your buyers without losing important historical data.",
+      "relatedLinks": [
+        "[Try merging duplicate customer profiles in your store](https://admin.shopify.com/customers?utm_source=editions&utm_feature=duplicate-customer-profiles)"
+      ]
+    },
+    {
+      "title": "Let shoppers manage orders and returns with new customer accounts",
+      "content": "Give your customers the power to review orders and manage returns with a customer account that doesn’t make them memorize another password. Customers will soon be able to use passkeys to sign in with their Shop credentials.",
+      "relatedLinks": [
+        "[Empower your shoppers in your store](https://admin.shopify.com/settings/checkout#customer-accounts?utm_source=editions&utm_feature=new-customer-accounts)"
+      ]
+    },
+    {
+      "title": "Create tokengated experiences",
+      "content": "Distribute your own unique NFTs, then create exclusive perks and experiences that recognize and reward your loyal token holders.",
+      "relatedLinks": [
+        "[Learn how to distribute your own unique NFTs](https://apps.shopify.com/categories/selling-products-blockchain-nft-distribution)",
+        "[Explore tokengated commerce](https://www.shopify.com/tokengated-commerce)"
+      ]
+    },
+    {
+      "title": "Understand buyer behavior with pixels",
+      "content": "Power your marketing and analytics with secure and accurate customer behavior data that respects their privacy, and manage it all from your admin.",
+      "relatedLinks": [
+        "[Try pixels in your store](https://admin.shopify.com/settings/customer_events?utm_source=editions&utm_feature=pixels)"
+      ]
+    },
+    {
+      "title": "More powerful marketing insights",
+      "content": "Make your marketing dollars go further with insights from new marketing KPIs, channel performance reports, and attribution data that’s automatically collected from UTMs and other signals—now all available in Shopify.",
+      "relatedLinks": [
+        "[Try marketing insights in your store](https://admin.shopify.com/marketing?utm_source=editions&utm_feature=marketing-insights)"
+      ]
+    },
+    {
+      "title": "Data-sharing with ad platforms",
+      "content": "Improve your return on ad spend with a wider range of high-quality customer data shared between Shopify and partners like Pinterest and Meta.",
+      "relatedLinks": [
+        "[Try data sharing in your store](https://admin.shopify.com/marketing/channels?utm_source=editions&utm_feature=server-pixels)"
+      ]
+    },
+    {
+      "title": "Logistics that drive conversion",
+      "content": "Drive sales by up to 25% with faster delivery and pre-approved access to Shop Promise. Build trust by automatically presenting reliable delivery dates on your storefront, powered by our intelligent software and physical network.\nGet prioritized placement, storage, and delivery in our network of 20+ distribution hubs and fulfillment centers with zero capital investment needed.\nBusinesses of all sizes can access any logistics service, on demand, exactly when and where they need it.",
+      "relatedLinks": [
+        "[Learn more about Shop Promise](https://www.shopify.com/shop-promise)",
+        "[Learn about logistics](https://www.shopify.com/logistics)"
+      ]
+    },
+    {
+      "title": "Freight and inventory inbounding",
+      "content": "Move a single pallet or an entire container through ports and within our network of fulfillment centers, powered by Flexport and our nationwide freight services.",
+      "relatedLinks": [
+        "[Learn more about Flexport](http://flexport.com/)",
+        "[Streamline your freight](https://shopify.com/freight)"
+      ]
+    },
+    {
+      "title": "Data-driven inventory distribution",
+      "content": "Be ready for spikes in customer demand and sales, and maintain fast delivery through our network that perfectly positions products closest to buyers. Ramp up or down and shift business between DTC and B2B.",
+      "relatedLinks": [
+        "[Sell more with faster fulfillment](https://www.shopify.com/fulfillment)"
+      ]
+    },
+    {
+      "title": "Configurable logistics",
+      "content": "Choose from services like freight, fulfillment, storage, prep, and returns. Pay for what you use and change your usage as your business evolves.",
+      "relatedLinks": [
+        "[Choose which logistics work for you](https://deliverr.com/)"
+      ]
+    },
+    {
+      "title": "Advanced returns functionality",
+      "content": "Streamline returns with three-day processing, product repackaging, and photos for damaged items. Now you can offer instant exchanges and credits through our Loop Returns integration.",
+      "relatedLinks": [
+        "[Learn more about Loop Returns](https://www.loopreturns.com/)",
+        "[Simplify your returns](https://www.shopify.com/fulfillment/features)"
+      ]
+    },
+    {
+      "title": "Smart order routing",
+      "content": "Whether you’re managing your own locations or partially outsourcing fulfillment, now you can reduce shipping costs and ship faster by routing orders to the most optimal location. Prioritize certain locations over others or those within the customer’s country to avoid duties and customs fees.",
+      "relatedLinks": [
+        "[Sign up for Smart order routing early access](https://www.shopify.com/order-routing-early-access)"
+      ]
+    },
+    {
+      "title": "Enhanced inventory tracking",
+      "content": "In addition to available, incoming, and committed inventory states, now get a real-time, accurate view of on hand and unavailable quantities across your locations within Shopify to minimize lost sales, misplaced stock, and over-ordering.",
+      "relatedLinks": [
+        "[Learn more about inventory states](https://help.shopify.com/en//manual/products/inventory/managing-inventory-quantities/inventory-states)",
+        "[Try enhanced inventory tracking in your store](https://admin.shopify.com/products/inventory?utm_source=editions&utm_feature=inventory-tracking)"
+      ]
+    },
+    {
+      "title": "Improved inventory accuracy across platforms",
+      "content": "Access the new Inventory States API to sync your on hand and unavailable quantities within Shopify and across external platforms and locations.",
+      "relatedLinks": [
+        "[Read inventory accuracy documentation](https://shopify.dev/apps/fulfillment/inventory-management-apps/quantities-states)"
+      ]
+    },
+    {
+      "title": "Bulk fulfillment actions and automations",
+      "content": "Speed up your fulfillment process with enhanced bulk actions and Shopify Flow’s fulfillment automations. Now you can eliminate repetitive tasks when preparing your orders for shipment and prioritize fulfillment by delivery destination.",
+      "relatedLinks": [
+        "[Try bulk fulfillment in your store](https://admin.shopify.com/apps/flow?utm_source=editions&utm_feature=bulk-fulfillment-automations)"
+      ]
+    },
+    {
+      "title": "Customer self-serve returns",
+      "content": "Let customers request and manage returns—and in the future, exchanges—directly from your online store using their customer account. Improve the customer experience and build loyalty with easier returns.",
+      "relatedLinks": [
+        "[Try self-serve returns in your store](https://admin.shopify.com/settings/checkout?utm_source=editions&utm_feature=self-serve-returns)"
+      ]
+    },
+    {
+      "title": "New APIs for returns management",
+      "content": "Developers can provide businesses better data continuity across systems and returns apps, giving them greater visibility and control over their returns.",
+      "relatedLinks": [
+        "[Read the returns managament API documentation](https://shopify.dev/apps/fulfillment/returns-apps)"
+      ]
+    },
+    {
+      "title": "Shipping insurance is included",
+      "content": "Protect your shipments from damage, loss, and even porch pirates. Shipping insurance of up to $200 is now included with each eligible label—at no cost to you.",
+      "relatedLinks": [
+        "[Ship confidently](https://www.shopify.com/shipping/shipping-insurance)"
+      ]
+    },
+    {
+      "title": "Exclusive rates with Shopify Shipping",
+      "content": "Save on shipping with exclusive rate discounts for USPS, Canada Post, DPD, and DHL Express.",
+      "relatedLinks": [
+        "[Try Shopify Shipping in your store](https://admin.shopify.com/shopify-shipping/calculator?utm_source=editions&utm_feature=shipping-exclusive-rates)"
+      ]
+    },
+    {
+      "title": "Shipping improvements in Canada",
+      "content": "Businesses using Canada Post can now access improved rates with Shopify Shipping or choose to offer their own rates at checkout. Businesses who want even more options can now work directly with UPS Canada.",
+      "relatedLinks": [
+        "[Try the improved shipping rates calculator in your store](https://admin.shopify.com/shopify-shipping/calculator?utm_source=editions&utm_feature=shipping-exclusive-rates-canada)"
+      ]
+    },
+    {
+      "title": "Shopify Shipping expands to Italy and Spain",
+      "content": "Now Italian and Spanish businesses can easily ship domestic orders with Poste Italiane in Italy and with Correos in Spain.",
+      "relatedLinks": [
+        "[Learn about shipping](https://help.shopify.com/en//manual/shipping/shopify-shipping/shipping-labels)"
+      ]
+    },
+    {
+      "title": "Granular permissions",
+      "content": "Introducing 10 new granular permissions, including view-only permissions, so store owners have better control over staff access to products and can delegate more confidently. Additionally on Shopify Plus, businesses can now duplicate an existing role and assign it from their organization admin.",
+      "relatedLinks": [
+        "[Try granular permissions in your store](https://admin.shopify.com/settings/account?utm_source=editions&utm_feature=granular-permissions)"
+      ]
+    },
+    {
+      "title": "Event webhooks",
+      "content": "The audit events webhook lets you easily access Admin API activity logs on your store, send them to GCP or AWS, and then route the data to your provider of choice without having to contact Shopify IT for a manual pull. Exclusive to Shopify Plus.",
+      "relatedLinks": [
+        "[Get the audit webhook](https://changelog.shopify.com/posts/webhook-topic-for-auditing-the-store-admin)"
+      ]
+    },
+    {
+      "title": "Metafields enhancements for back office",
+      "content": "Now you can use the bulk editor to create, edit, and delete values of metafields with definitions on products.",
+      "relatedLinks": [
+        "[Learn more about build editing](https://help.shopify.com/en//manual/shopify-admin/productivity-tools/bulk-editing)",
+        "[Read about bulk editing](https://www.shopify.com/blog/custom-data-management-tools)"
+      ]
+    },
+    {
+      "title": "Scheduling with Shopify Flow",
+      "content": "Schedule an automation of nearly any task or process for a specific time of day, week, or month to do more with the apps you’re already using, and fetch data to simplify reporting—all without touching a single line of code.",
+      "relatedLinks": [
+        "[Learn about Shopify Flow](https://help.shopify.com/en//manual/shopify-flow)"
+      ]
+    },
+    {
+      "title": "Shopify Flow OpenAI connector",
+      "content": "With a new branded OpenAI action, now you can use Shopify Flow to send text prompts and configuration parameters to GPT, and get back AI-generated text. Streamline messaging and content in your workflows.",
+      "relatedLinks": [
+        "[Learn about Shopify Flow connectors](https://help.shopify.com/en//manual/shopify-flow/reference/connectors)"
+      ]
+    },
+    {
+      "title": "Consolidated admin domains",
+      "content": "Access your store(s) through a single point of entry via admin.shopify.com, and navigate the admin faster with reduced page load times.",
+      "relatedLinks": [
+        "[Go to your store's admin](https://admin.shopify.com/)"
+      ]
+    },
+    {
+      "title": "Shopify Alerts",
+      "content": "Never miss critical business notifications with the new alerts feed located directly in the admin. Only staff with the required permissions to perform the tasks will receive relevant alerts. So those who need to know are notified about important updates, and others can continue working as usual.",
+      "relatedLinks": [
+        "[Read about Shopfy Alerts](https://www.shopify.com/blog/admin-enhancements#3)"
+      ]
+    },
+    {
+      "title": "New index page design",
+      "content": "We’ve improved the quality of the index page experience in the admin by reducing layers and consolidating the interface, creating a consistent system that works across all index pages.",
+      "relatedLinks": [
+        "[Try index and filtering in your store](https://admin.shopify.com/orders?utm_source=editions&utm_feature=index-and-filtering)"
+      ]
+    },
+    {
+      "title": "ShopifyQL Notebooks",
+      "content": "Make better business decisions by exploring and analyzing your data, visualizing your growth, and creating custom reports—all powered by our intelligent query language that understands commerce. Write your data story with ShopifyQL Notebooks. Exclusive to Shopify Plus.\nExplore new datasets with a better editor experience and assistive functionality with smart defaults.\nUse presentation mode to share your data story.\nDevelopers can now build apps or custom solutions for businesses with access to the ShopifyQL Stable API.",
+      "relatedLinks": [
+        "[Learn more about the ShopifyQL Stable API](https://shopify.engineering/shopify-commerce-data-querying-language-shopifyql)",
+        "[Try ShopifyQL Notebooks in your store](https://admin.shopify.com/apps/notebooks?utm_source=editions&utm_feature=shopifyql-notebooks)"
+      ]
+    },
+    {
+      "title": "Improved reporting for better insights",
+      "content": "Discover your most loyal customers with the new cohort analysis, which helps you identify key drivers for improving customer retention over time. Find the answers you’re looking for faster with the new reports index, and use comparisons to analyze performance over previous time periods.",
+      "relatedLinks": [
+        "[Learn more about time range comparisons](https://help.shopify.com/en//manual/reports-and-analytics/shopify-reports/using-reports/time-ranges)",
+        "[Try improved reports in your store](https://admin.shopify.com/reports/customer_cohort_analysis?utm_source=editions&utm_feature=improved-reports)"
+      ]
+    },
+    {
+      "title": "Shopify Tax",
+      "content": "Sales tax in the United States is complicated. Shopify Tax handles the complexity for you.\nStay on top of tax obligations with a state-by-state overview, and automatically apply the right rates at the right time, even as local rules and rates change.\nTake control of your sales tax collection, and get insights about it from your Shopify admin.",
+      "relatedLinks": [
+        "[Learn more about Shopify Tax](https://www.shopify.com/tax)",
+        "[Take a closer look at Shopify Tax](https://www.shopify.com/blog/editions#6)"
+      ]
+    },
+    {
+      "title": "Shopify Balance app",
+      "content": "Now you can manage your business finances easily and securely while on the go with the Shopify Balance app. Then close your books even faster with accounting integrations like Freshbooks, Bench, Sage, and more.",
+      "relatedLinks": [
+        "[Explore Shopify Balance](https://www.shopify.com/balance)"
+      ]
+    },
+    {
+      "title": "Shopify Capital extends to Australia",
+      "content": "Eligible Australians can now access funding without waiting in line at a bank, giving up equity, or doing tedious paperwork.",
+      "relatedLinks": [
+        "[Explore Shopify Capital](https://www.shopify.com/au/capital)"
+      ]
+    },
+    {
+      "title": "Shopify mobile app improvements",
+      "content": "Set up, grow, and run a world-class commerce business from your phone.\nEasily edit and update the look of your store with the online store editor. Take product images with your phone, and follow an intuitive flow to create new products and set up variants.\nAutomate your marketing and create branded emails using a variety of templates, or build custom emails on the go with Shopify Email.\nQuickly and accurately update inventory, and get an at-a-glance view of your store’s performance.",
+      "relatedLinks": [
+        "[Learn more about marketing automation](https://www.shopify.com/marketing-automation)",
+        "[Learn more about Shopify Email](https://www.shopify.com/email-marketing)",
+        "[Learn more about the Shopify Mobile app](https://www.shopify.com/blog/shopify-mobile-app)",
+        "[Get the Shopify app](https://www.shopify.com/mobile)"
+      ]
+    },
+    {
+      "title": "Redesigned Shopify App Store",
+      "content": "It’s easier than ever to choose the right apps to extend your store and confidently achieve your business goals.\nFind exactly what you’re looking for with personalized recommendations, related searches, and easy-to-scan app listings.\nLearn how to solve every business challenge with new navigation and app categories that offer more education.\nFind out what other businesses are using to get inspired, and discover new high-quality apps that can help your business grow.",
+      "relatedLinks": [
+        "[Find out what apps other businesses are using](https://apps.shopify.com/stories/merchant-tech-stack-thousand)",
+        "[Explore Shopify App Store](https://apps.shopify.com/)"
+      ]
+    },
+    {
+      "title": "Hydrogen 2: built on Remix",
+      "content": "Build performant, dynamic, and unique storefronts faster with Hydrogen and Remix.\nHydrogen features a new Storefront API client to make querying simple, starter templates and an upgraded CLI to get building faster, and Remix-optimized components.\nLeverage the open-source Remix framework and the power of the edge for improved performance with advancements like optimistic UI, nested routing, and progressive enhancement.\nCatch errors with improved TypeScript and IntelliSense support, ESLint support, and improved resilience across the framework.",
+      "relatedLinks": [
+        "[Read Hydrogen 2 documentation](https://shopify.dev/custom-storefronts/hydrogen)"
+      ]
+    },
+    {
+      "title": "Oxygen hosting available to more plans",
+      "content": "Get optimized performance and deploy Hydrogen-based storefronts globally with one click—for no extra cost—on our built-in hosting platform. Available to all plans except Starter.",
+      "relatedLinks": [
+        "[Read the Oxygen documentation](https://shopify.dev/custom-storefronts/oxygen)"
+      ]
+    },
+    {
+      "title": "Use Hydrogen with more React frameworks",
+      "content": "Bring some of the best parts of Hydrogen to more React frameworks like Next.js and Gatsby. The Hydrogen React library includes components like cart and Shop Pay and, for the first time to custom storefronts, Shopify Analytics.",
+      "relatedLinks": [
+        "[Read the Hydrogen 2 documentation](https://shopify.dev/custom-storefronts/react-storefront-kit)"
+      ]
+    },
+    {
+      "title": "Lightning-fast Storefront API",
+      "content": "Now the Storefront API is rendered globally to the edge, enabling fast load speeds on every device. It also supports private authentication for building server-side applications without limits.",
+      "relatedLinks": [
+        "[Learn more about the Storefront API](https://shopify.dev/api/storefront)",
+        "[Explore learning kit repo](https://github.com/Shopify/storefront-api-learning-kit)"
+      ]
+    },
+    {
+      "title": "Easy storefront prototyping with sample data",
+      "content": "Quickly spin up a proof-of-concept storefront without having to set up a shop or run any server-side code. Use our simple API to query sample products, variants, carts, and more to instantly experience headless commerce on Shopify.",
+      "relatedLinks": [
+        "[Build a proof-of-concept](https://mock.shop/)"
+      ]
+    },
+    {
+      "title": "Easy storefront prototyping with sample data",
+      "content": "Quickly spin up a proof-of-concept storefront without having to set up a shop or run any server-side code. Use our simple API to query sample products, variants, carts, and more to instantly experience headless commerce on Shopify.",
+      "relatedLinks": [
+        "[Build a proof-of-concept](https://mock.shop/)"
+      ]
+    },
+    {
+      "title": "Globally deployed Shopify Cart",
+      "content": "Built on the same infrastructure as our storefronts, Shopify Cart is deployed globally to the edge for faster response times.\nRolling out in phases, carts are interoperable across your storefronts, so you can run a shared cart across experiences like mobile and web.\nUse metafields to extend the cart schema with custom values that power unique logic on checkout or trigger a checkout extension.",
+      "relatedLinks": [
+        "[Learn more about Shopify Cart](https://shopify.dev/custom-storefronts/cart)"
+      ]
+    },
+    {
+      "title": "Build for millions of buyers with Shop Minis",
+      "content": "Build and integrate your experiences directly into the Shop app with our React Native SDK. Get started with just one command, and use pre-built components like search, product pages, and cart to make an incredible mobile shopping experience.",
+      "relatedLinks": [
+        "[Access the early release of Shop Minis](https://shop.app/minis)"
+      ]
+    },
+    {
+      "title": "Extend your checkout",
+      "content": "With Shopify Functions and checkout UI extensions, you can customize Shopify’s backend to alter the look, feel, and behavior of your checkout experience. Build the product bundles, order routing logic, checkout and cart validation rules, or delivery and payment options you need.",
+      "relatedLinks": [
+        "[Learn more about Shopify Functions](https://shopify.dev/api/functions)",
+        "[Customize checkout](https://shopify.dev/apps/checkout)"
+      ]
+    },
+    {
+      "title": "Introducing JavaScript for Shopify Functions",
+      "content": "Functions can now be written in JavaScript in addition to any other language that can compile to WebAssembly.",
+      "relatedLinks": [
+        "[Try the developer preview of JavaScript Shopify Functions](https://shopify.dev/api/functions/language-support/javascript)"
+      ]
+    },
+    {
+      "title": "New APIs for checkout UI extensions",
+      "content": "Checkout UI extensions now support authenticated network calls, direct querying of the Storefront API, and applying discount codes and gift cards using new APIs.",
+      "relatedLinks": [
+        "[Read the externsion points API documentation](https://shopify.dev/api/checkout-extensions/checkout/extension-points/api)"
+      ]
+    },
+    {
+      "title": "Build apps for the checkout editor",
+      "content": "Create apps that let Shopify Plus businesses add product offers, custom fields, loyalty programs, and more to their checkout. Businesses can configure this custom content directly in the drag-and-drop checkout editor.",
+      "relatedLinks": [
+        "[Explore UI extensions apps](https://apps.shopify.com/stories/guide-customize-your-checkout)"
+      ]
+    },
+    {
+      "title": "UI extensions are now available for the order status page",
+      "content": "Build apps that extend the functionality of the order status page. Add referral codes, product reviews, and more after a purchase. Extensions are upgrade-safe and can be configured by businesses without touching a line of code.",
+      "relatedLinks": [
+        "[Read the order status page extensions documentation](https://shopify.dev/api/release-notes/developer-previews#order-status-page-extensions)"
+      ]
+    },
+    {
+      "title": "Create custom data models with metaobjects",
+      "content": "Powered by metafields, use metaobjects to create custom content like product highlights and extend your back office data with custom objects like product materials. When building apps, control who can access your metafields and metaobjects through a reserved namespace.",
+      "relatedLinks": [
+        "[Learn more about metafields](https://shopify.dev/apps/data-extensions/metafields)",
+        "[Read the metaobjects documentation](https://shopify.dev/apps/data-extensions/metaobjects)"
+      ]
+    },
+    {
+      "title": "Build with Shopify Blockchain",
+      "content": "Use robust APIs and UI components to develop your next token-powered experience. Build apps that target specific audiences, drive engagement with exclusive perks, fuel customer loyalty, and foster brand collabs.",
+      "relatedLinks": [
+        "[Explore Shopify Blockchain](https://blockchain.shopify.dev/)"
+      ]
+    },
+    {
+      "title": "Increased API rate limits",
+      "content": "As businesses grow, they need to scale their tech stack. We’re providing unthrottled API calls for our newly launched Commerce Components by Shopify and increasing standard Admin API rate limits by 10x for Shopify Plus.",
+      "relatedLinks": [
+        "[Read about API rate limits](https://shopify.dev/api/usage/rate-limits)"
+      ]
+    },
+    {
+      "title": "Shopify CLI improvements",
+      "content": "Shopify CLI 3 can now integrate into your CI/CD pipeline to perform actions like pushing, pulling, and publishing a theme. When writing Liquid code, the updated CLI suggests context-aware autocompletion and in-line documentation. Also, when building apps, you have flexibility to bring your own tunnel.",
+      "relatedLinks": [
+        "[Learn about Shopify CLI](https://shopify.dev/themes/tools/cli)"
+      ]
+    },
+    {
+      "title": "Simplify webhook testing via CLI",
+      "content": "Easily trigger delivery of a sample payload for any Admin API webhook event topic with a single CLI command. Experiment with webhooks, test your endpoints, and verify that your app uses the payload as expected.",
+      "relatedLinks": [
+        "[Learn about webhook testing](https://shopify.dev/apps/tools/cli/commands#webhook-trigger)"
+      ]
+    },
+    {
+      "title": "Customer data protection by default",
+      "content": "Protect personal customer data with default redacting in APIs and the ability to apply for necessary access throughout the life of your app.",
+      "relatedLinks": [
+        "[Learn about customer data protection requirements](https://shopify.dev/apps/store/data-protection/protected-customer-data)"
+      ]
+    },
+    {
+      "title": "Robust test data for development stores",
+      "content": "Now you can populate your store with test data in a single click, so you can start developing your app or theme faster. This data includes the most common commerce resources and configurations to make testing and debugging easier.",
+      "relatedLinks": [
+        "[Try development stores in your store](https://partners.shopify.com/current/stores/new?store_type=test_store&data_type=static_data&utm_source=editions&utm_feature=dev-stores)"
+      ]
+    },
+    {
+      "title": "Make your app shine",
+      "content": "The Built for Shopify program offers great visibility and growth for apps that meet the high-quality standards Shopify has for commerce experiences. Get guidance on building great apps and improved performance reporting, then apply to join the program for special treatment in the Shopify App Store.\nGet your app in front of the right brands with self-categorization and a redesigned app listing that’s optimized to convert.\nEasily access key information about your apps, including revenue, API health, and progress toward earning app highlights in the improved app overview page in the Partner Dashboard.",
+      "relatedLinks": [
+        "[Learn more about the Built for Shopify program](https://shopify.dev/built-for-shopify)",
+        "[Try app reporting in your Partner Dashboard](https://partners.shopify.com/current/stores/new?store_type=test_store&data_type=static_data&utm_source=editions&utm_feature=dev-stores)"
+      ]
+    },
+    {
+      "title": "Introducing Commerce Components",
+      "content": "Commerce Components by Shopify gives you the choice to build and integrate your commerce stack, your way. Choose from modular components, integrate them with your existing services, and create commerce experiences that convert.",
+      "relatedLinks": [
+        "[Learn about enterprise commerce](https://www.shopify.com/commerce-components)"
+      ]
+    },
+    {
+      "title": "Globally scaled infrastructure",
+      "content": "Build faster on the most widely scaled commerce infrastructure, and get an edge-deployed cart that seamlessly integrates with your existing sites.",
+      "relatedLinks": []
+    },
+    {
+      "title": "Build with choice",
+      "content": "Choose from more than 30 components, including the world’s best-converting checkout, and use flexible APIs with no rate limits to create unparalleled customer experiences.",
+      "relatedLinks": []
+    },
+    {
+      "title": "World-class ecosystem",
+      "content": "We’re invested in your success with dedicated account teams, 24/7/365 technical support, and the largest ecosystem in commerce.",
       "relatedLinks": []
     }
   ]
