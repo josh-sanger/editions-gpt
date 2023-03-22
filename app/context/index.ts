@@ -15,7 +15,7 @@ const context = [
   },
   {
     role: 'user',
-    content: `One more thing. If the context provided has "Related links" you MUST share them with the user in the form of markdown. Do not make up links and only use the links provided in the context if they are there. These should be include at the bottom of your response and the URLS should not be converted into other langauges.
+    content: `One more thing. If the context provided has "Related links" you MUST share them with the user in the form of markdown. Do not make up links and only use the links provided in the context if they are there. These should be include at the bottom of your response and the URLS should not be converted into other langauges. If you are sharing inline links in your response, make sure they are proper html and not just the link.
     Example:
     [your answer to the questions]
 
