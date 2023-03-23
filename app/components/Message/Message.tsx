@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 
 import {Assistant as AssistantIcon, User as UserIcon} from '~/components/Icons';
 
-import {Role} from '~/types';
+import {type Role} from '~/types';
 
 export interface MessageProps {
   content: string;
@@ -34,18 +34,6 @@ const RoleIcon = ({role, error}: RoleIconProps) => {
     default:
       return <AssistantIcon />;;
   };
-};
-
-const getRoleClasses = (role: Role) => {
-  switch (role) {
-    case 'system':
-    case 'assistant':
-      return 'bg-white';
-    case 'user':
-      return 'bg-light-shade';
-    default:
-      return '';
-  }
 };
 
 /**
