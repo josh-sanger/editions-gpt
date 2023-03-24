@@ -279,7 +279,7 @@ export default function IndexPage() {
           <div className="intro grid place-items-center h-full text-center">
             <div className="intro-content">
               <h1 className="text-4xl font-semibold">Editions GPT</h1>
-              <p className="mt-4">Ask something about the Editions Winter ’23</p>
+              <p className="mt-4">Ask anything about the Winter ’23 Edition</p>
             </div>
           </div>
         )}
@@ -310,13 +310,13 @@ export default function IndexPage() {
           className="max-w-[500px] mx-auto"
         >
           <div className="input-wrap relative">
-            <label htmlFor="message" className="absolute left[-9999px] w-px h-px overflow-hidden">Ask a question about Editions</label>
+            <label htmlFor="message" className="absolute left[-9999px] w-px h-px overflow-hidden">Ask about this Edition</label>
             <textarea
               id="message"
               aria-disabled={isSubmitting}
               ref={inputRef}
               className="auto-growing-input m-0 appearance-none text-white placeholder:text-white resize-none text-sm md:text-lg py-4 px-6  border-none outline-none rounded-4xl w-full block leading-6 bg-gradient-to-r from-dark-blue to-light-blue"
-              placeholder="Ask a question about Editions"
+              placeholder="Ask about this Edition"
               name="message"
               onChange={handleTextareaChange}
               required
