@@ -300,7 +300,7 @@ export default function IndexPage() {
           </div>
         )}
       </div>
-      <div className="form-container p-4 sm:p-8">
+      <div className="form-container p-4 sm:p-8 backdrop-blur-md sticky bottom-0">
         <Form
           aria-disabled={isSubmitting}
           method="post"
