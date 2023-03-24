@@ -80,10 +80,9 @@ export async function action({request}: ActionArgs): Promise<ReturnedDataProps> 
           role: 'user',
           content: `Context:
           ${matchesContext}
-
-          Question: ${message}
-
-          Answer:
+          ---
+          Visitor asked: ${message}
+          ---
           `,
         },
       ],
@@ -95,6 +94,7 @@ export async function action({request}: ActionArgs): Promise<ReturnedDataProps> 
       message: body.get('message') as string,
       answer: answer as string,
       chatHistory,
+      pincodeResponseData,
     };
   } catch (error: any) {
     return {
@@ -196,7 +196,7 @@ export default function IndexPage() {
    * Handles the click event of a prefilled option
    */
   const handlePrefilledOption = (prompt: string) => {
-    if (!inputRef.current) {
+    if (!inputRef.current || isSubmitting) {
       return;
     }
 
@@ -227,6 +227,7 @@ export default function IndexPage() {
    * when the data comes back from the action method
    */
   useEffect(() => {
+    console.log(data);
     if (data?.error) {
       pushChatHistory({
         content: data.error as string,
@@ -331,7 +332,7 @@ export default function IndexPage() {
             <button
               aria-label="Submit"
               aria-disabled={isSubmitting}
-              className="absolute right-2 items-center top-1/2 -translate-y-1/2 appearance-none bg-transparent text-black h-11 w-11 border-none cursor-pointer shadow-none rounded-full grid place-items-center group bg-white hover:bg-light-shade transition-colors disabled:bg-[#e0e0e0] disabled:text-black disabled:cursor-not-allowed disabled:hover:bg-[#e0e0e0] focus:outline-dark-blue"
+              className="absolute right-2 items-center top-1/2 -translate-y-1/2 appearance-none bg-transparent text-black h-11 w-11 border-none cursor-pointer shadow-none rounded-full grid place-items-center group bg-white hover:bg-light-shade transition-colors disabled:opacity-[0.4] disabled:text-black disabled:cursor-not-allowed disabled:hover:bg-[#e0e0e0] focus:outline-dark-blue"
               type="submit"
               disabled={isSubmitting}
             >
@@ -343,7 +344,7 @@ export default function IndexPage() {
           <span className="text-white-faded w-full small-mobile:w-auto">Suggestions:</span>
           <button type="button" onClick={() => handlePrefilledOption('Anything new with marketing?')}>Marketing</button>
           <button type="button" onClick={() => handlePrefilledOption('Tell me something about operations!')}>Operations</button>
-          <button type="button" onClick={() => handlePrefilledOption('Aything new with the Shop app?')}>Shop app</button>
+          <button type="button" onClick={() => handlePrefilledOption('Anything new with the Shop app?')}>Shop app</button>
         </p>
       </div>
     </main>

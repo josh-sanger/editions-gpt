@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import ReactMarkdown from 'react-markdown';
+import {useEffect} from 'react';
 
 import {Assistant as AssistantIcon, User as UserIcon} from '~/components/Icons';
 
@@ -38,25 +39,52 @@ const RoleIcon = ({role, error}: RoleIconProps) => {
 
 /**
  * Renders a message
+ * TODO: Content could be json or string, need to handle both
+ * TODO: Handle malformed json
  */
 export default function Message({content, error, key, role = 'user'}: MessageProps) {
+
+  // may need to optimize this
+  let answer;
+  let relatedLinks = [];
+
+  try {
+    const contentJson = JSON.parse(content);
+
+    answer = contentJson.answer;
+    // could potential fail as well
+    relatedLinks = contentJson.relatedLinks;
+
+  } catch {
+    answer = content;
+  }
+
   return (
-    <div
-      className={cn(
-        'message w-full p-4 flex small-mobile:max-sm:text-sm',
-        role === 'user' ? 'justify-end text-right' : 'justify-start',
-        error && 'text-error'
+    <>
+      {!!relatedLinks.length && (
+          <div className="links-wrapper flex gap-2 small-mobile:max-sm:text-sm item-center flex-wrap p-4">
+          {relatedLinks.map((link, index) => (
+            <a className="text-white bg-[#1F1F1F] rounded-4xl p-4 no-underline hover:underline" key={`link-${link.url}-${index}`}href={link.url}>{link.text}</a>
+          ))}
+          </div>
       )}
-      key={key || ''}
-    >
-      <div className={cn(
-        'message-inner space-x-4 max-w-[480px] rounded-4xl p-4',
-        role === 'user' ? 'bg-gradient-to-r from-dark-blue to-light-blue' : 'bg-white text-black',
-      )}>
-        <div className="response">
-          <ReactMarkdown children={content} />
+      <div
+        className={cn(
+          'message w-full p-4 flex small-mobile:max-sm:text-sm',
+          role === 'user' ? 'justify-end text-right' : 'justify-start',
+          error && 'text-error'
+        )}
+        key={key || ''}
+      >
+        <div className={cn(
+          'message-inner space-x-4 max-w-[480px] rounded-4xl p-4',
+          role === 'user' ? 'bg-gradient-to-r from-dark-blue to-light-blue' : 'bg-white text-black',
+        )}>
+          <div className="response">
+            <ReactMarkdown children={answer} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
