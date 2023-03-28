@@ -60,7 +60,8 @@ export async function loader() {
         metadata: {
           title: section.title,
           content: section.content,
-          relatedLinks: section.relatedLinks.join(', ') || '',
+          relatedLinks: section.relatedLinks,
+          productId: section.productId,
         },
         values: embeddings[i],
       }

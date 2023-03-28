@@ -1,4 +1,4 @@
-import {useRef, useEffect, useCallback, useState} from 'react';
+import React, {useRef, useEffect, useCallback, useState} from 'react';
 import {Configuration, OpenAIApi} from 'openai';
 import {type ChatCompletionRequestMessage} from 'openai';
 
@@ -20,15 +20,7 @@ export interface ChatHistoryProps extends ChatCompletionRequestMessage {
   error?: boolean,
 }
 
-/**
- * API call executed server side
- */
-export async function action({request}: ActionArgs): Promise<ReturnedDataProps> {
-  const body = await request.formData();
-  const message = body.get('message') as string;
-  const chatHistory = JSON.parse(body.get('chat-history') as string) || [];
-
-  // store your key in .env
+async function getContext(query: string) {
   const conf = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
   });
@@ -39,7 +31,7 @@ export async function action({request}: ActionArgs): Promise<ReturnedDataProps> 
     // get the vector of the query string
     const embeddingResponse = await openai.createEmbedding({
       model: 'text-embedding-ada-002',
-      input: message,
+      input: query,
     });
 
     const [responseData] = embeddingResponse.data.data;
@@ -61,14 +53,36 @@ export async function action({request}: ActionArgs): Promise<ReturnedDataProps> 
       }),
     });
 
-    // save as json
     const pincodeResponseData = await pineconeResponse.json();
 
     const matchesContext = pincodeResponseData.matches.map((item: any) => (
       `Title: ${item.metadata.title}
       Content: ${item.metadata.content}
-      ${item.metadata.relatedLinks ? `Related links: ${item.metadata.relatedLinks}` : ''}`
+      ProductId: ${item.metadata.productId}`
     ));
+
+    return matchesContext;
+
+  } catch (error: any) {
+    return error.message || 'Error: something went wrong.';
+  }
+}
+
+/**
+ * API call executed server side
+ */
+export async function action({request}: ActionArgs): Promise<ReturnedDataProps> {
+  const body = await request.formData();
+  const message = body.get('message') as string;
+  const chatHistory = JSON.parse(body.get('chat-history') as string) || [];
+
+  // store your key in .env
+  const conf = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
+
+  try {
+    const openai = new OpenAIApi(conf);
 
     // get the answer from GPT-3.5-turbo
     const chat = await openai.createChatCompletion({
@@ -78,23 +92,46 @@ export async function action({request}: ActionArgs): Promise<ReturnedDataProps> 
         ...chatHistory,
         {
           role: 'user',
-          content: `Context:
-          ${matchesContext}
-          ---
-          Visitor asked: ${message}
-          ---
-          `,
+          content: message,
         },
       ],
     });
 
-    const answer = chat.data.choices[0].message?.content;
+    let answer = chat.data.choices[0].message?.content as string;
+
+    // if the assistant tries to use the context tool
+    if (answer.startsWith('CONTEXT=')) {
+      const query = answer.split('CONTEXT=')[1];
+      const matchingContext = await getContext(query);
+
+      console.log(matchingContext)
+
+      // get the answer from GPT-3.5-turbo
+      const chatWithContext = await openai.createChatCompletion({
+        model: 'gpt-3.5-turbo',
+        messages: [
+          ...context,
+          ...chatHistory,
+          {
+            role: 'user',
+            content: `Context:
+            ${matchingContext}
+            ---
+            Visitor asked: ${message}
+            ---
+            `,
+          },
+        ],
+      });
+
+      answer = chatWithContext.data.choices[0].message?.content as string;;
+    }
 
     return {
       message: body.get('message') as string,
       answer: answer as string,
       chatHistory,
-      pincodeResponseData,
+      // pincodeResponseData,
     };
   } catch (error: any) {
     return {
@@ -227,7 +264,6 @@ export default function IndexPage() {
    * when the data comes back from the action method
    */
   useEffect(() => {
-    console.log(data);
     if (data?.error) {
       pushChatHistory({
         content: data.error as string,
@@ -287,12 +323,14 @@ export default function IndexPage() {
         {chatHistory.length > 0 && (
           <div className="messages max-w-maxWidth mx-auto min-h-full grid place-content-end grid-cols-1">
             {chatHistory.map((chat, index) => (
-              <Message
-                error={chat.error}
-                content={chat.content}
-                key={`message-${index}`}
-                role={chat.role}
-              />
+              <React.Fragment key={`message-${index}`}>
+                <Message
+                  error={chat.error}
+                  content={chat.content}
+                  key={`message-${index}`}
+                  role={chat.role}
+                />
+              </React.Fragment>
             ))}
             {isSubmitting && (
               <Message content="Thinking..." role="assistant" />
@@ -343,7 +381,7 @@ export default function IndexPage() {
         <p className="made-with text-xs text-center mt-4 text-white-faded-less flex flex-wrap gap-4 justify-center">
           <span className="text-white-faded w-full small-mobile:w-auto">Suggestions:</span>
           <button type="button" onClick={() => handlePrefilledOption('Anything new with marketing?')}>Marketing</button>
-          <button type="button" onClick={() => handlePrefilledOption('Tell me something about operations!')}>Operations</button>
+          <button type="button" onClick={() => handlePrefilledOption('Tell me something new with logistics!')}>Logistics</button>
           <button type="button" onClick={() => handlePrefilledOption('Anything new with the Shop app?')}>Shop app</button>
         </p>
       </div>

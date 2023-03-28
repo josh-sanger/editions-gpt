@@ -23,7 +23,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="h-full bg-gradient-to-br from-[#191919] via-[#191919] to-[#643C99] text-white font-body leading-6 bg-fixed">
+      <body className="h-full bg-gradient-to-br from-[#191919_35%] to-[#643C99] text-white font-body leading-6 bg-fixed">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
