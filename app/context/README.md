@@ -121,7 +121,7 @@ This Readme is meant to act as a time stamp so we can keep track of how the prom
   ```
 
   ### Output from chat
-
+  <img width="1381" alt="Screenshot 2023-03-28 at 3 48 26 PM" src="https://user-images.githubusercontent.com/58700044/228351407-93d96910-59c0-4b0d-914c-dd12a4876064.png">
 
 </details>
 
