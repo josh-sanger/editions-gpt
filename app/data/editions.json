@@ -26,7 +26,8 @@
           "content": "Try it in your store"
         }
       ],
-      "productId": 2
+      "productId": 2,
+      "youtubeId": "98QZKeeYz5M"
     },
     {
       "title": "Apps to extend checkout",
@@ -135,7 +136,8 @@
           "content": "Learn more"
         }
       ],
-      "productId": 12
+      "productId": 12,
+      "youtubeId": "8IAzmFPi6EU"
     },
     {
       "title": "Customize your store with metaobjects",
@@ -340,7 +342,8 @@
           "content": "Try it in your store"
         }
       ],
-      "productId": 30
+      "productId": 30,
+      "youtubeId": "oudcJ-NtOT0"
     },
     {
       "title": "Sync and sell on YouTube",
@@ -395,7 +398,8 @@
           "content": "Join the waitlist"
         }
       ],
-      "productId": 35
+      "productId": 35,
+      "youtubeId": "rRvhTLPCa6I"
     },
     {
       "title": "Affordable shipping rates and integrated partners",
@@ -528,7 +532,8 @@
           "content": "Find out how Brooklinen uses B2B on Shopify"
         }
       ],
-      "productId": 47
+      "productId": 47,
+      "youtubeId": "k8A-tTLRB-k"
     },
     {
       "title": "Vaulted credit cards",
@@ -606,7 +611,8 @@
           "content": "Try it in your store"
         }
       ],
-      "productId": 53
+      "productId": 53,
+      "youtubeId": "ZPdWERzLNks"
     },
     {
       "title": "Acquire new customers with Shop Cash campaigns",
@@ -699,7 +705,8 @@
           "content": "Try it in your store"
         }
       ],
-      "productId": 60
+      "productId": 60,
+      "youtubeId": "mWr3ZEf-cXI"
     },
     {
       "title": "Customize Shopify Email templates",
@@ -903,7 +910,8 @@
           "content": "Sign up for Smart order routing early access"
         }
       ],
-      "productId": 76
+      "productId": 76,
+      "youtubeId": "JqRPjqyshO0"
     },
     {
       "title": "Enhanced inventory tracking",
@@ -1113,7 +1121,8 @@
           "content": "Try ShopifyQL Notebooks in your store"
         }
       ],
-      "productId": 94
+      "productId": 94,
+      "youtubeId": "PXlGXjndLvY"
     },
     {
       "title": "Improved reporting for better insights",
@@ -1143,7 +1152,8 @@
           "content": "Take a closer look at Shopify Tax"
         }
       ],
-      "productId": 96
+      "productId": 96,
+      "youtubeId": "27nvH4IXvuU"
     },
     {
       "title": "Shopify Balance app",
@@ -1284,7 +1294,8 @@
           "content": "Learn more about Shopify Cart"
         }
       ],
-      "productId": 107
+      "productId": 107,
+      "youtubeId": "aaBenrAAP7Q"
     },
     {
       "title": "Build for millions of buyers with Shop Minis",
@@ -1310,7 +1321,8 @@
           "content": "Customize checkout"
         }
       ],
-      "productId": 109
+      "productId": 109,
+      "youtubeId": "wNdvxLzWUQg"
     },
     {
       "title": "Introducing JavaScript for Shopify Functions",
@@ -1461,7 +1473,8 @@
           "content": "Learn about enterprise commerce"
         }
       ],
-      "productId": 122
+      "productId": 122,
+      "youtubeId": "JMKYPDem8o8"
     },
     {
       "title": "Globally scaled infrastructure",

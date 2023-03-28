@@ -34,7 +34,6 @@ export default function Message({content, error, role = 'user'}: MessageProps) {
 
   // may need to optimize this
   let answer;
-  let relatedLinks = [];
   let productIds = [];
 
   try {
@@ -42,7 +41,6 @@ export default function Message({content, error, role = 'user'}: MessageProps) {
 
     answer = contentJson.answer;
     // could potential fail as well
-    relatedLinks = contentJson.relatedLinks || [];
     productIds = contentJson.productIds || [];
   } catch {
     answer = content;
@@ -50,36 +48,32 @@ export default function Message({content, error, role = 'user'}: MessageProps) {
 
   return (
     <>
-      {!!relatedLinks.length && (
-          <div className="links-wrapper flex gap-2 small-mobile:max-sm:text-sm item-center flex-wrap p-4">
-          {relatedLinks.map((link, index) => (
-            <a className="text-white bg-[#1F1F1F] rounded-4xl p-4 no-underline hover:underline" key={`link-${link.url}-${index}`}href={link.url}>{link.text}</a>
-          ))}
-          </div>
-      )}
       {!!productIds.length && (
-        <div className="productIds grid md:grid-cols-2 gap-2">
+        <div className="productIds grid md:grid-cols-2 gap-2 items-end">
           {productIds.map((id, index) => {
             const productInfo = getProductInfo(id);
-
-            console.log(productInfo);
             return (
-              <div key={`${productInfo.title}-${index}`} className="text-white bg-[#1F1F1F] rounded-4xl p-4 grid grid-rows-[1fr_auto]">
-                <div className="">
-                  <h2 className="text-lg font-bold mb-2">{productInfo.title}</h2>
-                  <p className="text-[#868686] text-sm">{productInfo.content}</p>
-                </div>
-                {!!productInfo?.relatedLinks.length && (
-                  <div className="links-wrapper flex gap-2 small-mobile:max-sm:text-sm item-center flex-wrap mt-4">
-                    {productInfo.relatedLinks.map((link, index) => (
-                      <a className="text-white no-underline hover:underline text-sm inline-flex gap-1" key={`link-${link.url}-${index}`} href={link.url} target="_blank">
-                        <LinkIcon />
-                        {link.content}
-                      </a>
-                    ))}
+              <>
+                <div key={`${productInfo.title}-${index}`} className="text-white bg-[#1F1F1F] rounded-4xl p-4 grid grid-rows-[1fr_auto]">
+                  <div className="">
+                    {productInfo?.youtubeId && (
+                      <iframe className="w-full aspect-video rounded-t-[20px] mb-4" src={`https://www.youtube.com/embed/${productInfo.youtubeId}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+                    )}
+                    <h2 className="text-lg font-bold mb-2">{productInfo.title}</h2>
+                    <p className="text-[#868686] text-sm">{productInfo.content}</p>
                   </div>
-                )}
-              </div>
+                  {!!productInfo?.relatedLinks.length && (
+                    <div className="links-wrapper flex gap-2 small-mobile:max-sm:text-sm item-center flex-wrap mt-4">
+                      {productInfo.relatedLinks.map((link, index) => (
+                        <a className="text-white no-underline hover:underline text-sm inline-flex gap-1" key={`link-${link.url}-${index}`} href={link.url} target="_blank">
+                          <LinkIcon />
+                          {link.content}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </>
             );
             return (
               <a className="text-white bg-[#1F1F1F] rounded-4xl p-4 no-underline hover:underline" key={`product-id-${id}-${index}`} href="#">{id}</a>
