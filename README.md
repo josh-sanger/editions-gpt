@@ -1,9 +1,8 @@
-# GPT-3.5-turbo base template
-This repo's purpose is to be a starting point for contextual based chat interactions with Open Ai's [gpt-3.5-turbo](https://platform.openai.com/docs/guides/chat) API.
+# Editions GPT
+A context-loaded chat assistant for answering questions about Editions Winter ’23 using OpenAI's [gpt-3.5-turbo](https://platform.openai.com/docs/guides/chat) API.
 
-It is meant to be forked, cloned, and copied so folks can play around with the API. Please customize the styling, break things, and most of all, have fun!
+<img width="1381" alt="Screenshot 2023-03-28 at 3 48 26 PM" src="https://user-images.githubusercontent.com/58700044/228587624-4900913c-cc36-45b6-8232-724a4d7ce941.png">
 
-<img width="1257" alt="Screenshot 2023-03-20 at 10 52 53 AM" src="https://user-images.githubusercontent.com/58700044/226378642-8fe10c07-6aed-4c72-a5a3-f66007ffb76a.png">
 
 # Getting started
 1. Clone or fork the repo
