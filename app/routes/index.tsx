@@ -87,6 +87,7 @@ export async function action({request}: ActionArgs): Promise<ReturnedDataProps> 
     // get the answer from GPT-3.5-turbo
     const chat = await openai.createChatCompletion({
       model: 'gpt-3.5-turbo',
+      temperature: 0.1,
       messages: [
         ...context,
         ...chatHistory,
@@ -109,6 +110,7 @@ export async function action({request}: ActionArgs): Promise<ReturnedDataProps> 
       // get the answer from GPT-3.5-turbo
       const chatWithContext = await openai.createChatCompletion({
         model: 'gpt-3.5-turbo',
+        temperature: 0.1,
         messages: [
           ...context,
           ...chatHistory,
