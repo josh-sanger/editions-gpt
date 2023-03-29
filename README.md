@@ -8,19 +8,24 @@ It is meant to be forked, cloned, and copied so folks can play around with the A
 # Getting started
 1. Clone or fork the repo
 2. Run `npm i`
-3. Create an `.env` file in root and add your [Open AI API key](https://platform.openai.com/account/api-keys) to it (this file is not tracked)
+3. Create an `.env` file in root and add your [Open AI API key](https://platform.openai.com/account/api-keys) to it (this file is not tracked) and add your [Pinecone](https://pinecone.io) index URL and API key
 ```javaScript
 OPENAI_API_KEY=superSecretAPIKey
+PINECONE_INDEX_URL=indexURL
+PINECONE_API_KEY=superSecretAPIKey
 ```
 4. Run `npm run dev`
 5. Open in your browser `http://localhost:3000/`
 6. Start playing with the context you wish to add in `/app/context/index.ts`
 
 # Under the hood
-This is build using [Remix](https://remix.run/) (a react based framework), [Typescript](https://www.typescriptlang.org/), and uses plain css (for now). Some key notes:
+This is build using [Remix](https://remix.run/) (a react based framework), [Typescript](https://www.typescriptlang.org/), and uses [TailwindCSS](https://tailwindcss.com/) for styling. Some key notes:
 - Pages can be found under `/app/routes`
-- Styling can be found in `/app/stylesheets` and can be added in the `/app/root.tsx` file in the `links()` function
+- Custom styling can be found in `/app/stylesheets` and can be added in the `/app/root.tsx` file in the `links()` function
 - Context for the chat interaction should be stored in `/app/context/index.ts` and should follow the data format for [messages](https://platform.openai.com/docs/guides/chat/introduction) (role, content)
+- This is using the Toolformer modal to decide when it needs to fetch data about products
+- This is using Pinecone.io as the embeddings vector DB
+- To generate the embeddings vector JSON visit `http://localhost:3000/endpoints/generate`. You can then use the file to upsert into the DB
 
 # Deployment
 This repo was set up to deploy to [Vercel](https://vercel.com/) as the main deplopyment source but you can customize it if you wish to suit your needs.
