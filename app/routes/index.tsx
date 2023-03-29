@@ -155,6 +155,7 @@ export default function IndexPage() {
   const navigation = useNavigation();
   const submit = useSubmit();
   const [chatHistory, setChatHistory] = useState<ChatHistoryProps[]>([]);
+  const [isThinking, setIsThinking] = useState(false);
 
   const isSubmitting = navigation.state === 'submitting';
 
@@ -243,6 +244,35 @@ export default function IndexPage() {
   }
 
   /**
+   * Scrolls to the bottm of the page and uses requestAnimationFrame to animate the scrolling (Since the height of the message animates)
+   */
+  const scrollToBottom = (animationDuration: number = 300) => {
+    const body = document.body;
+    const html = document.documentElement;
+    const startTime = performance.now();
+
+    const step = (currentTime: number) => {
+      const targetScrollTop = Math.max(
+          body.scrollHeight,
+          body.offsetHeight,
+          html.clientHeight,
+          html.scrollHeight,
+          html.offsetHeight
+      );
+      const progress = (currentTime - startTime) / animationDuration;
+
+      window.scrollTo({ top: targetScrollTop });
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  };
+
+
+  /**
    * Focuses the input element when the page is loaded and clears the
    * input when the form is submitted
    */
@@ -254,10 +284,17 @@ export default function IndexPage() {
     if (navigation.state === 'submitting') {
       inputRef.current.value = '';
       inputRef.current.rows = 1;
+
+      // adding a small dekay so both messages don't appear at the same time
+      setTimeout(() => {
+        setIsThinking(true);
+        scrollToBottom();
+      }, 100);
     } else {
       inputRef.current.focus();
+      setIsThinking(false);
     }
-  }, [navigation.state]);
+  }, [navigation.state, scrollToBottom, setIsThinking]);
 
   /**
    * Adds the API's response message to the chat history
@@ -291,25 +328,12 @@ export default function IndexPage() {
     }
 
     if (chatHistory.length) {
-      const body = document.body;
-      const html = document.documentElement;
-
-      // Calculate the maximum scroll height
-      const maxScrollHeight = Math.max(
-          body.scrollHeight,
-          body.offsetHeight,
-          html.clientHeight,
-          html.scrollHeight,
-          html.offsetHeight
-      );
-
-      // Scroll to the bottom
-      window.scrollTo(0, maxScrollHeight);
+      scrollToBottom();
     }
   }, [chatHistory]);
 
   return (
-    <main className="container mx-auto rounded-lg h-full grid grid-rows-layout p-4 sm:p-8 max-w-full sm:max-w-auto">
+    <main className="container mx-auto rounded-lg h-full grid grid-rows-layout p-4 pb-0 sm:p-8 sm:pb-0 max-w-full sm:max-w-auto">
       <div className="chat-container" ref={chatContainerRef}>
         {chatHistory.length === 0 && (
           <div className="intro grid place-items-center h-full text-center">
@@ -321,7 +345,7 @@ export default function IndexPage() {
         )}
 
         {chatHistory.length > 0 && (
-          <div className="messages max-w-maxWidth mx-auto min-h-full grid place-content-end grid-cols-1">
+          <div className="messages max-w-maxWidth mx-auto min-h-full grid place-content-end grid-cols-1 gap-4">
             {chatHistory.map((chat, index) => (
               <React.Fragment key={`message-${index}`}>
                 <Message
@@ -332,7 +356,7 @@ export default function IndexPage() {
                 />
               </React.Fragment>
             ))}
-            {isSubmitting && (
+            {isThinking && (
               <Message content="Thinking..." role="assistant" />
             )}
           </div>

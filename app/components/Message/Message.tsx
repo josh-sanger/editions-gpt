@@ -1,3 +1,4 @@
+import {useRef, useState, useEffect} from 'react';
 import cn from 'classnames';
 import ReactMarkdown from 'react-markdown';
 
@@ -31,6 +32,11 @@ const getProductInfo = (productId: number) => {
  * TODO: Handle malformed json
  */
 export default function Message({content, error, role = 'user'}: MessageProps) {
+  const rendered = useRef<null | boolean>(null);
+  const messageRef = useRef<HTMLDivElement>(null);
+  const messageWrapRef = useRef<HTMLDivElement>(null);
+  const messageBodyRef = useRef<HTMLDivElement>(null);
+  const [messageHeight, setMessageHeight] = useState(0);
 
   // may need to optimize this
   let answer;
@@ -46,14 +52,58 @@ export default function Message({content, error, role = 'user'}: MessageProps) {
     answer = content;
   }
 
+  const handleTransitionEnd = () => {
+    const theMessageWrap = messageWrapRef.current;
+    if (!theMessageWrap) {
+      return;
+    }
+
+    theMessageWrap.removeAttribute('style');
+  }
+
+  useEffect(() => {
+    const theMessage = messageRef.current;
+
+    if (rendered.current !== null || !theMessage) {
+      return
+    }
+
+    rendered.current = true;
+
+    const contentHeight = theMessage.clientHeight;
+    setMessageHeight(contentHeight);
+  }, []);
+
+  useEffect(() => {
+    const theMessageWrap = messageWrapRef.current;
+    if (!theMessageWrap) {
+      return;
+    }
+
+    theMessageWrap.addEventListener('transitionend', handleTransitionEnd);
+
+    return () => {
+      theMessageWrap.removeEventListener('transitionend', handleTransitionEnd);
+    };
+  }, []);
+
   return (
-    <>
-      {!!productIds.length && (
-        <div className="productIds grid md:grid-cols-2 gap-2 items-end">
-          {productIds.map((id: number, index: number) => {
-            const productInfo = getProductInfo(id) as any;
-            return (
-              <>
+    <div
+      className="message-wrap transition-height duration-300"
+      ref={messageWrapRef}
+      style={{height: `${messageHeight}px`, overflow: 'hidden'}}
+    >
+      <div className="message-wrap-inner" ref={messageRef}>
+        {!!productIds.length && (
+          <div
+            className={cn(
+              'product-ids grid md:grid-cols-2 gap-2 items-end mb-4 transition-[opacity,transform] duration-[400ms] delay-75 relative',
+              rendered.current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-7',
+            )}
+          >
+            {productIds.map((id: number, index: number) => {
+              const productInfo = getProductInfo(id) as any;
+              return (
                 <div
                   key={`${productInfo.title}-${index}`}
                   className="text-white bg-[#1F1F1F] rounded-4xl p-4 grid grid-rows-[1fr_auto]"
@@ -87,27 +137,33 @@ export default function Message({content, error, role = 'user'}: MessageProps) {
                     </div>
                   )}
                 </div>
-              </>
-            );
-          })}
-        </div>
-      )}
-      <div
-        className={cn(
-          'message w-full p-4 flex small-mobile:max-sm:text-sm',
-          role === 'user' ? 'justify-end text-right' : 'justify-start',
-          error && 'text-error'
+              );
+            })}
+          </div>
         )}
-      >
-        <div className={cn(
-          'message-inner space-x-4 max-w-[480px] rounded-4xl p-4',
-          role === 'user' ? 'bg-gradient-to-r from-dark-blue to-light-blue' : 'bg-white text-black',
-        )}>
-          <div className="response">
-            <ReactMarkdown children={answer} />
+        <div
+          className={cn(
+            'message w-full flex small-mobile:max-sm:text-sm',
+            role === 'user' ? 'justify-end text-right' : 'justify-start',
+            error && 'text-error'
+          )}
+        >
+          <div
+            className={cn(
+              'message-inner space-x-4 max-w-[480px] rounded-4xl p-4 transition-[opacity,transform] delay-150 relative',
+              productIds.length ? 'delay-150 duration-[400ms]' : 'duration-300',
+              role === 'user' ? 'bg-gradient-to-r from-dark-blue to-light-blue' : 'bg-white text-black',
+              rendered.current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-7',
+
+            )}
+            ref={messageBodyRef}
+          >
+            <div className="response">
+              <ReactMarkdown children={answer} />
+            </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
