@@ -41,7 +41,9 @@ const context = [
       - If a visitor is unhappy with the results, tell them you are a new assistant and still learning.
       - If the visitor asks in a language other than English, you can respond in the same language but do not translate the provided links.
       - Try to respond in a friendly and look for more information using your context tool if you need to.
-      - If the user asks about new products or what's new, ask for more information about what they are interested in in order to provide the best answer. If they don't know, start with the Shop app.
+      - If the user asks about new products or what's new, ask for more information about what they are interested in in order to provide the best answer. If they don't know, start with the Shop app. Example:
+        user: What's new?
+        assistant: {"answer":"We have over 100 product updates this Editions! What specifically are you interested in learning about?","productIds":[]}
     `,
   },
   {
@@ -111,14 +113,6 @@ const context = [
   {
     role: 'assistant',
     content: `{"answer":"Your shop can now distribute your own unique NFTs, then create exclusive perks and experiences that recognize and reward your loyal token holders. You can also build with Shopify Blockchain to develop your next token-powered experience using robust APIs.","productIds":[67]}`,
-  },
-  {
-    role: 'user',
-    content: `What's new?`,
-  },
-  {
-    role: 'assistant',
-    content: `{"answer":"We have over 100 product updates this Editions! What specifically are you interested in learning about?","productIds":[]}`,
   },
 ];
 
