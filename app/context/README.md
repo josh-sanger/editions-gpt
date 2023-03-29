@@ -1,5 +1,5 @@
 # Context Versioning
-This Readme is meant to act as a time stamp so we can keep track of how the prompts have changed and what the outputs were for each set of prompts.
+This Readme is meant to act as a time stamp so we can keep track of how the prompts have changed and what the outputs were for each set of prompts. If the [temperature](https://algowriting.medium.com/gpt-3-temperature-setting-101-41200ff0d0be#:~:text=Temperature%20%3D%201.0&text=Even%20for%20open%2Dended%20tasks,values%20between%200.7%20to%200.9.) is not mentioned in the change log, then it was the default temp (1.0).
 
 <details>
   <summary>0.1.1 (03/29/23)</summary>
@@ -128,6 +128,9 @@ This Readme is meant to act as a time stamp so we can keep track of how the prom
     },
   ];
   ```
+
+  ### Temperature
+  0.1
 
   ### Output from chat
 
