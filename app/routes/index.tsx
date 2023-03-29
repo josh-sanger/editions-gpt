@@ -105,8 +105,6 @@ export async function action({request}: ActionArgs): Promise<ReturnedDataProps> 
       const query = answer.split('CONTEXT=')[1];
       const matchingContext = await getContext(query);
 
-      console.log(matchingContext)
-
       // get the answer from GPT-3.5-turbo
       const chatWithContext = await openai.createChatCompletion({
         model: 'gpt-3.5-turbo',

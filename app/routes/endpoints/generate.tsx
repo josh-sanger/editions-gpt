@@ -33,10 +33,6 @@ export async function loader() {
         ${inputSection?.title || ''}
         Content:
         ${inputSection?.content || ''}
-        ${inputSection?.relatedLinks.length ? `
-        Related Links:
-        ${inputSection.relatedLinks.join(', ') || ''}
-        ` : ''}
         `;
         batchedSections.push(input);
 
@@ -60,7 +56,6 @@ export async function loader() {
         metadata: {
           title: section.title,
           content: section.content,
-          relatedLinks: section.relatedLinks,
           productId: section.productId,
         },
         values: embeddings[i],
