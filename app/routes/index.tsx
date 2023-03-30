@@ -20,6 +20,11 @@ export interface ChatHistoryProps extends ChatCompletionRequestMessage {
   error?: boolean,
 }
 
+/**
+ * Gets the closest 5 matching results from pinecone.
+ * @param query The user's question to get context for
+ * @returns the top 5 matching results from pinecone
+ */
 async function getContext(query: string) {
   const conf = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
@@ -28,7 +33,7 @@ async function getContext(query: string) {
   try {
     const openai = new OpenAIApi(conf);
 
-    // get the vector of the query string
+    // get the vector of the query string from OpenAI
     const embeddingResponse = await openai.createEmbedding({
       model: 'text-embedding-ada-002',
       input: query,
@@ -36,7 +41,7 @@ async function getContext(query: string) {
 
     const [responseData] = embeddingResponse.data.data;
 
-    // get best results from pinecone
+    // get top 5 results from pinecone
     const pineconeResponse = await fetch(`${process.env.PINECONE_INDEX_URL}/query`, {
       method: 'POST',
       headers: {
@@ -56,10 +61,8 @@ async function getContext(query: string) {
     const pincodeResponseData = await pineconeResponse.json();
 
     const matchesContext = pincodeResponseData.matches.map((item: any) => (
-      `Title: ${item.metadata.title}
-      Content: ${item.metadata.content}
-      ProductId: ${item.metadata.productId}`
-    ));
+      `{title: "${item.metadata.title}", content: "${item.metadata.content}", productId: "${item.metadata.productId}"}`
+    )).join(',');
 
     return matchesContext;
 
@@ -82,56 +85,36 @@ export async function action({request}: ActionArgs): Promise<ReturnedDataProps> 
   });
 
   try {
+    // get 5 matching results from pinecone
+    const matchingContext = await getContext(message);
+
     const openai = new OpenAIApi(conf);
 
-    // get the answer from GPT-3.5-turbo
+    // get the answer from GPT-3.5-turbo completion endpoint
     const chat = await openai.createChatCompletion({
       model: 'gpt-3.5-turbo',
-      temperature: 0.1,
+      temperature: 0.7,
       messages: [
         ...context,
         ...chatHistory,
         {
           role: 'user',
-          content: message,
+          content: `Context:
+          ${matchingContext}
+          ---
+          Visitor asked: ${message}
+          ---
+          `,
         },
       ],
     });
 
     let answer = chat.data.choices[0].message?.content as string;
 
-    // if the assistant tries to use the context tool
-    if (answer.startsWith('CONTEXT=')) {
-      const query = answer.split('CONTEXT=')[1];
-      const matchingContext = await getContext(query);
-
-      // get the answer from GPT-3.5-turbo
-      const chatWithContext = await openai.createChatCompletion({
-        model: 'gpt-3.5-turbo',
-        temperature: 0.1,
-        messages: [
-          ...context,
-          ...chatHistory,
-          {
-            role: 'user',
-            content: `Context:
-            ${matchingContext}
-            ---
-            Visitor asked: ${message}
-            ---
-            `,
-          },
-        ],
-      });
-
-      answer = chatWithContext.data.choices[0].message?.content as string;;
-    }
-
     return {
       message: body.get('message') as string,
       answer: answer as string,
       chatHistory,
-      // pincodeResponseData,
     };
   } catch (error: any) {
     return {
