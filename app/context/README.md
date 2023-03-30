@@ -6,6 +6,7 @@ This Readme is meant to act as a time stamp so we can keep track of how the prom
 
   ### TLDR;
   This version removes the CONTEXT tool and instead ensures the completion API call has the closest 5 items (matches).
+  
   ### Context:
   ```JavaScript
   const context = [
@@ -52,6 +53,7 @@ This Readme is meant to act as a time stamp so we can keep track of how the prom
   0.7
 
   ### Output from chat
+  <img width="865" alt="Screenshot 2023-03-30 at 10 01 48 AM" src="https://user-images.githubusercontent.com/58700044/228861063-d3a8491b-f58f-4855-bf3c-5136c422d116.png">
 
 
 </details>
