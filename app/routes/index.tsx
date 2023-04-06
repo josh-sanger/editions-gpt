@@ -3,7 +3,7 @@ import {Configuration, OpenAIApi} from 'openai';
 import {type ChatCompletionRequestMessage} from 'openai';
 
 import {type ActionArgs} from '@remix-run/node';
-import {Form, useActionData, useNavigation, Link, useSubmit} from '@remix-run/react';
+import {Form, useActionData, useNavigation, Link, useSubmit, useLocation, useNavigate} from '@remix-run/react';
 
 import context from '~/context';
 import {Arrow as ArrowIcon} from '~/components/Icons';
@@ -141,6 +141,8 @@ export default function IndexPage() {
   const [isThinking, setIsThinking] = useState(false);
 
   const isSubmitting = navigation.state === 'submitting';
+  const location = useLocation();
+  const navigate = useNavigate();
 
   /**
    * Handles the change event of a textarea element and adjusts its height based on the content.
@@ -229,7 +231,7 @@ export default function IndexPage() {
   /**
    * Scrolls to the bottm of the page and uses requestAnimationFrame to animate the scrolling (Since the height of the message animates)
    */
-  const scrollToBottom = (animationDuration: number = 300) => {
+  const scrollToBottom = useCallback((animationDuration: number = 300) => {
     const body = document.body;
     const html = document.documentElement;
     const startTime = performance.now();
@@ -252,8 +254,17 @@ export default function IndexPage() {
     };
 
     window.requestAnimationFrame(step);
-  };
+  }, []);
 
+  /**
+   * Sets the chat history when the page is loaded or the history is traversed (back / forward)
+   */
+  const setChat = useCallback(() => {
+    if (location.state?.chatHistory) {
+      setChatHistory(location.state.chatHistory);
+      scrollToBottom();
+    }
+  }, [location, setChatHistory, scrollToBottom]);
 
   /**
    * Focuses the input element when the page is loaded and clears the
@@ -295,12 +306,30 @@ export default function IndexPage() {
     }
 
     if (data?.answer) {
-      pushChatHistory({
+      const newAnswer = {
         content: data.answer as string,
         role: 'assistant',
+      };
+
+      pushChatHistory(newAnswer as ChatHistoryProps);
+
+      // push location to history
+      navigate('/', {
+        state: {
+          ...location.state,
+          chatHistory: [...chatHistory, newAnswer],
+        },
       })
+
     }
-  }, [data, pushChatHistory])
+  }, [data, pushChatHistory, navigate]);
+
+  useEffect(() => {
+    if (!location.state) {
+      setChatHistory([]);
+      scrollToBottom();
+    }
+  }, [location, setChatHistory, scrollToBottom])
 
   /**
    * Scrolls to the bottom of the chat container when the chat history changes
@@ -313,7 +342,12 @@ export default function IndexPage() {
     if (chatHistory.length) {
       scrollToBottom();
     }
-  }, [chatHistory]);
+  }, [chatHistory, scrollToBottom]);
+
+  // set chat when component mounts / remounts
+  useEffect(() => {
+    setChat();
+  }, [setChat]);
 
   return (
     <main className="container mx-auto rounded-lg h-full grid grid-rows-layout p-4 pb-0 sm:p-8 sm:pb-0 max-w-full sm:max-w-auto">
