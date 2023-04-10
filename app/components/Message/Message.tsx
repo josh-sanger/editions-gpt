@@ -11,6 +11,7 @@ export interface MessageProps {
   content: string;
   role?: Role;
   error?: boolean;
+  thinking?: boolean;
 }
 
 export interface RoleIconProps {
@@ -30,7 +31,7 @@ const getProductInfo = (productId: number) => {
  * TODO: Content could be json or string, need to handle both
  * TODO: Handle malformed json
  */
-export default function Message({content, error, role = 'user'}: MessageProps) {
+export default function Message({content, error, role = 'user', thinking = false}: MessageProps) {
   const rendered = useRef<null | boolean>(null);
   const messageRef = useRef<HTMLDivElement>(null);
   const messageWrapRef = useRef<HTMLDivElement>(null);
@@ -148,7 +149,7 @@ export default function Message({content, error, role = 'user'}: MessageProps) {
         <div
           className={cn(
             'message w-full flex small-mobile:max-sm:text-sm',
-            role === 'user' ? 'justify-end text-right' : 'justify-start',
+            role === 'user' ? 'justify-end' : 'justify-start',
             error && 'text-error'
           )}
         >
@@ -163,7 +164,15 @@ export default function Message({content, error, role = 'user'}: MessageProps) {
             ref={messageBodyRef}
           >
             <div className="response">
-              <ReactMarkdown children={answer} />
+              {thinking ? (
+                <div className="flex gap-[5px] min-h-[20px] sm:min-h-[24px] items-center">
+                  <span className="thinking-bubble animate-thinking-1" />
+                  <span className="thinking-bubble animate-thinking-2" />
+                  <span className="thinking-bubble animate-thinking-3" />
+                </div>
+              ) : (
+                <ReactMarkdown children={answer} />
+              )}
             </div>
           </div>
         </div>

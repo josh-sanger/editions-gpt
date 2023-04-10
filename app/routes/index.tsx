@@ -374,7 +374,7 @@ export default function IndexPage() {
               </React.Fragment>
             ))}
             {isThinking && (
-              <Message content="Thinking..." role="assistant" />
+              <Message thinking content="" role="assistant" />
             )}
           </div>
         )}
